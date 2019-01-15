@@ -5,4 +5,6 @@ import pl.coderslab.model.Course;
 
 
 public interface CourseRepository extends JpaRepository<Course, Long> {
+
+
 }

@@ -12,6 +12,7 @@ public class CourseConverter implements Converter<String, Course> {
 
     @Override
     public Course convert(String s) {
+
         return courseRepository.findOne(Long.parseLong(s));
     }
 }

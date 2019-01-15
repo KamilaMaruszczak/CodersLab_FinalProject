@@ -4,11 +4,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import pl.coderslab.dto.CoursesDto;
 import pl.coderslab.model.Course;
+import pl.coderslab.model.User;
 import pl.coderslab.repository.CourseRepository;
+import pl.coderslab.repository.UserRepository;
 
 
 import javax.validation.Valid;
@@ -20,6 +24,23 @@ public class CourseController {
 
     @Autowired
     private CourseRepository courseRepository;
+
+    @Autowired
+    private UserRepository userRepository;
+
+    @Autowired
+    private CoursesDto coursesDto;
+
+    @ModelAttribute("coursesType")
+    public List<String> type() {
+        return coursesDto.getType();
+    }
+
+    @ModelAttribute("instructor")
+    public List<User> instructor() {
+        return userRepository.queryFindInstructors();
+    }
+
 
 
     @RequestMapping(value = "/add", produces = "text/html; charset=utf-8", method = RequestMethod.GET)

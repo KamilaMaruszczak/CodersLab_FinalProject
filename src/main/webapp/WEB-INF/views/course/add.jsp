@@ -18,13 +18,44 @@
             <div class="form-group">
                 <label class="control-label col-sm-2">Instruktor:</label>
                 <div class="col-sm-10">
-                    <form:input path="instructorName" class="form-control" placeholder="Podaj instruktora"/>
+                    <form:select path="instructor" items="${instructor}" itemValue="id" class="form-control"/>
+                    <form:errors path="instructor" cssClass="error"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">Rodzaj kursu</label>
+                <div class="col-sm-10">
+                    <form:select path="type" items="${coursesType}" class="form-control"/>
+                    <form:errors path="type" cssClass="error"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">Początek kursu</label>
+                <div class="col-sm-10">
+                    <form:input type="date" path="startDate" class="form-control" placeholder="YYYY-MM_DD"/>
+                    <form:errors path="startDate" cssClass="error"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2">Koniec kursu:</label>
+                <div class="col-sm-10">
+                    <form:input type="date" path="endDate" class="form-control" placeholder="YYYY-MM-DD"/>
+                    <form:errors path="endDate" cssClass="error"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2">Liczba dostępnych łódek:</label>
+                <div class="col-sm-10">
+                    <form:input path="numberOfBoats" class="form-control" placeholder="Podaj liczbę łódek"/>
+                    <form:errors path="numberOfBoats" cssClass="error"/>
                 </div>
             </div>
 
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" class="btn btn-default">Submit</button>
+                    <input type="submit" value="Utwórz kurs"/>
                 </div>
             </div>
         </form:form>

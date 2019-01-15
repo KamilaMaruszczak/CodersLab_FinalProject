@@ -37,11 +37,14 @@ public class User {
     @Column(name = "sailor_name")
     private String sailorName;
 
+
+    private boolean instructor;
+
     @NotBlank
     @Column(name = "year_of_birth")
     private Integer yearOfBirth;
 
-    @ManyToMany(mappedBy = "users")
+    @ManyToMany(mappedBy = "users", fetch = FetchType.EAGER)
     private List<Course> courses;
 
 
