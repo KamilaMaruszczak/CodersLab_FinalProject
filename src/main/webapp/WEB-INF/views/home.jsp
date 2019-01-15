@@ -5,8 +5,7 @@
   Time: 15:22
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ include file="/WEB-INF/views/taglib.jsp" %>
 <html>
 <%@ include file="/WEB-INF/views/head.jsp" %>
 <%@ include file="/WEB-INF/views/header.jsp" %>
@@ -15,6 +14,9 @@
     <div class="border box">
         <div class="calendar">
             <img src="/fragments/images/kalendar.png">
+        </div>
+        <div>
+            <%--${courses}--%>
         </div>
     </div>
 </section>
