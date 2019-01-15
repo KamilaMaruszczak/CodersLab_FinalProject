@@ -1,0 +1,79 @@
+:root {
+    --link-color: white;
+    --light-link-color: #0606ee;
+    --background-color: #050243;
+    --lighter-background-color: rgba(1, 6, 101, 0.8);
+    --lighter-text-color: #9fa292;
+    --dark-text: #000000;
+
+    font-size: 16px;
+}
+
+html {
+    min-height: 100%;
+}
+
+body{
+    background: repeat url("/fragments/images/tlo(1).jpg");
+
+}
+.noPadding {
+    padding: 0;
+}
+.noMargin {
+    margin: 0;
+}
+.center {
+    text-align: center;
+}
+
+.border{
+    border-width:20px;
+    border-style:dashed;
+    border-radius: 16px;
+    border-color: var(--lighter-background-color);
+
+
+}
+
+.box{
+    background-color: ghostwhite;
+    padding: auto;
+    margin-top: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+   height: 800px;
+}
+
+
+.page-header {
+    background: var(--background-color);
+}
+
+.nav-link {
+    color: var(--link-color)!important;
+    font-size: 16px;
+}
+
+.color-header {
+    color: var(--link-color);
+}
+
+.main-logo {
+    font-family: "Charmonman", cursive;
+    display: inline-block;
+    color: var(--link-color)!important;
+    margin-top: 20px;
+    font-size: 50px;
+    font-weight: 900;
+}
+
+.navbar {
+    min-height: 60px;
+}
+
+.navbar-brand {
+    padding: 0 15px;
+    height: 60px;
+    line-height: 60px;
+}
