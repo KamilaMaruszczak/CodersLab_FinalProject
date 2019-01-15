@@ -12,4 +12,6 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
     @Query("select u from User u where u.instructor = true")
     List<User> queryFindInstructors();
+
+    User findUserByEmail(String email);
 }

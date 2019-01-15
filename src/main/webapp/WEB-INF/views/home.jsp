@@ -16,7 +16,33 @@
             <img src="/fragments/images/kalendar.png">
         </div>
         <div>
-            <%--${courses}--%>
+            <table class="paleBlueRows">
+                <thead>
+                <tr>
+                    <th scope="row" colspan="5">Lista dostepnych kursów 2019</th>
+                </tr>
+                <tr>
+                    <th>Data rozpoczęcia</th>
+                    <th>Data zakończenia</th>
+                    <th>Klasa</th>
+                    <th>Instruktor</th>
+                    <th>Zapisy</th>
+                </tr>
+                </thead>
+                <tbody>
+                <c:forEach items="${courses}" var="item">
+                    <tr>
+                        <td> ${item.startDate}</td>
+                        <td> ${item.endDate}</td>
+                        <td> ${item.type}</td>
+                        <td> ${item.instructor.name}</td>
+                        <td><a href="<c:url value = "/user/login"/>">ZAPISY</a></td>
+
+                    </tr>
+                </c:forEach>
+
+                </tbody>
+            </table>
         </div>
     </div>
 </section>

@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ include file="/WEB-INF/views/taglib.jsp" %>
-<html>
+<html lang="pl-PL">
 <%@ include file="/WEB-INF/views/head.jsp" %>
 <%@ include file="/WEB-INF/views/header.jsp" %>
 
@@ -18,7 +18,8 @@
             <div class="form-group">
                 <label class="control-label col-sm-2">Instruktor:</label>
                 <div class="col-sm-10">
-                    <form:select path="instructor" items="${instructor}" itemValue="id" class="form-control"/>
+                    <form:select path="instructor" items="${instructor}" itemLabel="name" itemValue="id"
+                                 class="form-control"/>
                     <form:errors path="instructor" cssClass="error"/>
                 </div>
             </div>

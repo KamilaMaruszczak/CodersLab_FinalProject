@@ -8,10 +8,10 @@
                 <a class="nav-link disabled" href="/kursy">Kursy</a>
             </li>
             <li>
-                <a class="nav-link color-header" href="/login">logowanie</a>
+                <a class="nav-link color-header" href="/user/login">logowanie</a>
             </li>
             <li>
-                <a class="nav-link color-header" href="/register">rejestracja</a>
+                <a class="nav-link color-header" href="/user/register">rejestracja</a>
             </li>
             <li>
                 <a class="nav-link disabled" href="/kontakt">Kontakt</a>

@@ -28,21 +28,25 @@ public class User {
 
     @Email
     @NotBlank
+    @Column(unique = true)
     private String email;
+
+    @NotBlank
+    private String password;
 
     @NotBlank
     private String phone;
 
-    @NotBlank
-    @Column(name = "sailor_name")
-    private String sailorName;
+//    @NotBlank
+//    @Column(name = "sailor_name")
+//    private String sailorName;
 
 
     private boolean instructor;
 
-    @NotBlank
-    @Column(name = "year_of_birth")
-    private Integer yearOfBirth;
+//    @NotBlank
+//    @Column(name = "year_of_birth")
+//    private Integer yearOfBirth;
 
     @ManyToMany(mappedBy = "users", fetch = FetchType.EAGER)
     private List<Course> courses;
