@@ -3,6 +3,8 @@ package pl.coderslab.model;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
@@ -16,7 +18,6 @@ import java.util.List;
 @Table(name = "users")
 @Getter
 @Setter
-@ToString
 public class User {
 
     @Id
@@ -37,19 +38,21 @@ public class User {
     @NotBlank
     private String phone;
 
-//    @NotBlank
-//    @Column(name = "sailor_name")
-//    private String sailorName;
-
-
     private boolean instructor;
 
-//    @NotBlank
-//    @Column(name = "year_of_birth")
-//    private Integer yearOfBirth;
+    @OneToMany(mappedBy = "user",
+            cascade = CascadeType.ALL)
+    @LazyCollection(LazyCollectionOption.FALSE)
+    private List<Sailor> sailors;
 
-    @ManyToMany(mappedBy = "users", fetch = FetchType.EAGER)
-    private List<Course> courses;
-
-
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", phone='" + phone + '\'' +
+                '}';
+    }
 }

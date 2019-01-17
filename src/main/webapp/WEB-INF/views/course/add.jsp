@@ -5,7 +5,10 @@
   Time: 12:28
   To change this template use File | Settings | File Templates.
 --%>
-<%@ include file="/WEB-INF/views/taglib.jsp" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8" %>
 <html lang="pl-PL">
 <%@ include file="/WEB-INF/views/head.jsp" %>
 <%@ include file="/WEB-INF/views/header.jsp" %>
@@ -13,7 +16,7 @@
 <body>
 <section>
     <div class="border box">
-        Dodaj kurs:
+        <p>Dodaj kurs:</p><br>
         <form:form modelAttribute="course" method="post" class="form-horizontal">
             <div class="form-group">
                 <label class="control-label col-sm-2">Instruktor:</label>

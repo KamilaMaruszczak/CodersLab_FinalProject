@@ -5,41 +5,57 @@
   Time: 18:16
   To change this template use File | Settings | File Templates.
 --%>
-<%@ include file="/WEB-INF/views/taglib.jsp" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8" %>
 <html>
 <%@ include file="/WEB-INF/views/head.jsp" %>
 <%@ include file="/WEB-INF/views/header.jsp" %>
 <body>
 <section>
-    ${error}
+
     <div class="border box">
-        <form class="form-horizontal">
-            <div class="form-group">
-                <label class="control-label col-sm-2" for="email">Email:</label>
-                <div class="col-sm-10">
-                    <input type="email" class="form-control" id="email" placeholder="Enter email">
+        <div class="mx-auto">
+
+            <div class="text-center"><p>Zaloguj się:</p><br></div>
+
+            <div class="row">
+                <div class="mx-auto">
+                    <form method="post">
+                        <div class="form-group row">
+                            <label class="control-label col-sm-2">Email:</label>
+                            <div class="col-sm-10">
+                                <input type="email" class="form-control" name="email">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="control-label col-sm-2">Hasło:</label>
+                            <div class="col-sm-10">
+                                <input type="password" class="form-control" name="password">
+                            </div>
+                        </div>
+
+                        <div class="form-group row center">
+                            <div class="col-sm-offset-5 col-sm-12">
+                                <div class="error">
+                                    ${error}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row ">
+                            <div class="mx-auto">
+                                <button type="submit" class="myButton">ZALOGUJ</button>
+                                <div class="margin-top text-center"><a href="/user/register"> Zarejestruj</a></div>
+                            </div>
+                        </div>
+
+                    </form>
+
                 </div>
             </div>
-            <div class="form-group">
-                <label class="control-label col-sm-2" for="pwd">Password:</label>
-                <div class="col-sm-10">
-                    <input type="password" class="form-control" id="pwd" placeholder="Enter password">
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                    <div class="checkbox">
-                        <label><input type="checkbox">Remember me</label>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" class="btn btn-default">Zaloguj</button>
-                </div>
-            </div>
-        </form>
-        <a href="/user/register">Zarejestruj się jako nowy użytkownik</a>
+        </div>
+
     </div>
 </section>
 </body>

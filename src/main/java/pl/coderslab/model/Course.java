@@ -3,10 +3,13 @@ package pl.coderslab.model;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import javax.validation.constraints.Future;
 import java.util.Date;
 import java.util.List;
 
@@ -14,7 +17,7 @@ import java.util.List;
 @Table(name = "courses")
 @Getter
 @Setter
-@ToString
+
 public class Course {
 
     @Id
@@ -28,17 +31,29 @@ public class Course {
 
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @Future
     private Date startDate;
 
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @Future
     private Date endDate;
 
     @OneToOne
     private User instructor;
 
-    @ManyToMany(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
-    private List<User> users;
+    @ManyToMany
+    @LazyCollection(LazyCollectionOption.FALSE)
+    private List<Sailor> sailors;
 
-
+    @Override
+    public String toString() {
+        return "Course{" +
+                "id=" + id +
+                ", type='" + type + '\'' +
+                ", numberOfBoats=" + numberOfBoats +
+                ", startDate=" + startDate +
+                ", endDate=" + endDate +
+                '}';
+    }
 }

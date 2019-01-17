@@ -26,8 +26,8 @@ public class HomeController {
 
 
     @RequestMapping(value = "/", produces = "text/html; charset=utf-8", method = RequestMethod.GET)
-    public String home(HttpSession session, Model model) {
-        //model.addAttribute("login",session.getAttribute("email"));
+    public String home() {
+
         return "/home";
     }
 

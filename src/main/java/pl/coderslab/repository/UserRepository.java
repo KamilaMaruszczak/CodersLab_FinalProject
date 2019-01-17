@@ -14,4 +14,6 @@ public interface UserRepository extends JpaRepository<User, Long> {
     List<User> queryFindInstructors();
 
     User findUserByEmail(String email);
+
+
 }

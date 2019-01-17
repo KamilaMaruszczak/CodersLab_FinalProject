@@ -33,6 +33,7 @@ public class CourseController {
 
     @ModelAttribute("coursesType")
     public List<String> type() {
+
         return coursesDto.getType();
     }
 
@@ -57,7 +58,7 @@ public class CourseController {
             return "/course/add";
         }
         courseRepository.save(course);
-        return "redirect:course/all";
+        return "redirect:/";
 
     }
 

@@ -8,14 +8,33 @@
                 <a class="nav-link disabled" href="/kursy">Kursy</a>
             </li>
             <li>
-                <a class="nav-link color-header" href="/user/login">logowanie</a>
+                <c:choose>
+                    <c:when test="${name==null}">
+                        <a class="nav-link color-header" href="/user/login">logowanie</a>
+                    </c:when>
+                    <c:otherwise>
+                        <a class="nav-link color-header" href="/user/login">wyloguj</a>
+                    </c:otherwise>
+                </c:choose>
             </li>
-            <li>
-                <a class="nav-link color-header" href="/user/register">rejestracja</a>
-            </li>
+            <c:choose>
+                <c:when test="${name==null}">
+                    <li>
+                        <a class="nav-link color-header" href="/user/register">rejestracja</a>
+                    </li>
+                </c:when>
+            </c:choose>
+
             <li>
                 <a class="nav-link disabled" href="/kontakt">Kontakt</a>
             </li>
+            <li>
+
+            </li>
         </ul>
+        <div>
+            <div id="loggedUser" class="circle-div text-center icon-user"><i class="fa fa-anchor"></i>
+                <span class="margin-left">${name}</span></div>
+        </div>
     </nav>
 </header>
