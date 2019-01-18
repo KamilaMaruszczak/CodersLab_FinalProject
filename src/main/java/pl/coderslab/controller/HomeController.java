@@ -2,14 +2,13 @@ package pl.coderslab.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import pl.coderslab.model.Course;
 import pl.coderslab.repository.CourseRepository;
 
-import javax.servlet.http.HttpSession;
 import java.util.List;
 
 
@@ -21,7 +20,7 @@ public class HomeController {
 
     @ModelAttribute("courses")
     public List<Course> getCourses() {
-        return courseRepository.findAll();
+        return courseRepository.findAllByOrderByStartDate();
     }
 
 
@@ -31,5 +30,10 @@ public class HomeController {
         return "/home";
     }
 
+    @RequestMapping(value = "/course/description", produces = "text/html; charset=utf-8")
+    public String desc() {
+
+        return "/course/description";
+    }
 
 }

@@ -13,7 +13,7 @@
 <%@ include file="/WEB-INF/views/head.jsp" %>
 <%@ include file="/WEB-INF/views/header.jsp" %>
 <body>
-<section>
+<div class="mx-auto">
 
     <div class="border box">
         <div class="mx-auto">
@@ -57,6 +57,6 @@
         </div>
 
     </div>
-</section>
+</div>
 </body>
 </html>

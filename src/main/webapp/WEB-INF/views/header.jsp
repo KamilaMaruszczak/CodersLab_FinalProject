@@ -5,7 +5,7 @@
         </a>
         <ul class="nav text-uppercase">
             <li class="nav-item active">
-                <a class="nav-link disabled" href="/kursy">Kursy</a>
+                <a class="nav-link disabled" href="/course/description">Kursy</a>
             </li>
             <li>
                 <c:choose>
@@ -34,7 +34,7 @@
         </ul>
         <div>
             <div id="loggedUser" class="circle-div text-center icon-user"><i class="fa fa-anchor"></i>
-                <span class="margin-left">${name}</span></div>
+                <span class="margin-left charonman">${name}</span></div>
         </div>
     </nav>
 </header>

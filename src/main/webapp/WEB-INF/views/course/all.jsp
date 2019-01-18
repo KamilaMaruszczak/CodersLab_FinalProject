@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: kamila
-  Date: 14.01.19
-  Time: 15:22
-  To change this template use File | Settings | File Templates.
---%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -16,13 +9,10 @@
 <%@ include file="/WEB-INF/views/header.jsp" %>
 
 <body>
-<c:choose>
-    <c:when test="${instructor}">
 
-        <%@ include file="/WEB-INF/views/admin/sidebar.jsp" %>
 
-    </c:when>
-</c:choose>
+<%@ include file="/WEB-INF/views/admin/sidebar.jsp" %>
+
 
 <section>
 
@@ -37,14 +27,15 @@
             <table class="paleBlueRows">
                 <thead>
                 <tr>
-                    <th scope="row" colspan="5">Lista dostepnych kursów 2019</th>
+                    <th scope="row" colspan="6">Lista dostepnych kursów 2019</th>
                 </tr>
                 <tr>
                     <th>Data rozpoczęcia</th>
                     <th>Data zakończenia</th>
                     <th>Klasa</th>
                     <th>Instruktor</th>
-                    <th>Zapisy</th>
+                    <th>Edytuj</th>
+                    <th>Usuń</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -54,7 +45,8 @@
                         <td><fmt:formatDate value='${item.endDate}' pattern='dd-MM-yyyy'/></td>
                         <td> ${item.type}</td>
                         <td> ${item.instructor.name}</td>
-                        <td><a href="<c:url value = "/user/course/${item.id}"/>">ZAPISY</a></td>
+                        <td><a href="<c:url value = "/course/edit/${item.id}"/>">EDYTUJ</a></td>
+                        <td><a href="<c:url value = "/course/delete/${item.id}"/>">USUŃ</a></td>
 
                     </tr>
                 </c:forEach>

@@ -77,9 +77,7 @@ public class UserController {
             session.setAttribute("email", email);
             User user = userRepository.findUserByEmail(email);
             session.setAttribute("name", user.getName());
-            if (user.isInstructor()) {
-                return "redirect:/dashboard";
-            }
+            session.setAttribute("instructor", user.isInstructor());
             return "redirect:/";
         } else {
             model.addAttribute("error", "Błędny adres email lub hasło");

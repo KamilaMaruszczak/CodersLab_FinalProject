@@ -14,6 +14,7 @@
 <%@ include file="/WEB-INF/views/header.jsp" %>
 
 <body>
+<%@ include file="/WEB-INF/views/admin/sidebar.jsp" %>
 <section>
     <div class="border box">
         <p>Dodaj kurs:</p><br>
@@ -21,8 +22,9 @@
             <div class="form-group">
                 <label class="control-label col-sm-2">Instruktor:</label>
                 <div class="col-sm-10">
-                    <form:select path="instructor" items="${instructor}" itemLabel="name" itemValue="id"
-                                 class="form-control"/>
+                    <form:select path="instructor">
+                        <form:options items="${instructor}" itemValue="id" itemLabel="name"/>
+                    </form:select>
                     <form:errors path="instructor" cssClass="error"/>
                 </div>
             </div>

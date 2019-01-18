@@ -64,15 +64,15 @@ public class CourseController {
 
     @RequestMapping(value = "/all", produces = "text/html; charset=utf-8")
     public String all(Model model) {
-        List<Course> courses = courseRepository.findAll();
-        model.addAttribute("course", courses);
+        List<Course> courses = courseRepository.findAllByOrderByStartDate();
+        model.addAttribute("courses", courses);
         return "/course/all";
     }
 
     @RequestMapping(value = "/edit/{id}", produces = "text/html; charset=utf-8", method = RequestMethod.GET)
     public String edit(@PathVariable Long id, Model model) {
         Course course = courseRepository.findOne(id);
-        model.addAttribute("course", course);
+        model.addAttribute("courses", course);
         return "/course/add";
     }
 
