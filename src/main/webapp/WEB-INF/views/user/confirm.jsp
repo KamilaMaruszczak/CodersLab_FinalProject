@@ -16,6 +16,15 @@
 <%@ include file="/WEB-INF/views/header.jsp" %>
 
 <body>
+<c:choose>
+    <c:when test="${instructor}">
+
+        <%@ include file="/WEB-INF/views/admin/sidebar.jsp" %>
+
+    </c:when>
+</c:choose>
+
+
 <div class="border box">
     <div class="text-center"><p>Zapisujesz na kurs:</p><br></div>
 
@@ -84,13 +93,17 @@
                 <div class="form-group row">
                     <div class="mx-auto">
                         <input type="submit" class="myButton" value="ZAPISZ"/>
-                        <a href="/">
-                            <button class="myButton">ZREZYGNUJ</button>
-                        </a>
+
                     </div>
                 </div>
             </form:form>
-
+            <div class="row">
+                <div class="mx-auto">
+                    <a href="/" class="center">
+                        <button class="myButton">ZREZYGNUJ</button>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 </div>

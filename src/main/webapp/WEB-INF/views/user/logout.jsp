@@ -13,6 +13,15 @@
 <%@ include file="/WEB-INF/views/head.jsp" %>
 <%@ include file="/WEB-INF/views/header.jsp" %>
 <body>
+<c:choose>
+    <c:when test="${instructor}">
+
+        <%@ include file="/WEB-INF/views/admin/sidebar.jsp" %>
+
+    </c:when>
+</c:choose>
+
+
 <section>
 
     <div class="border box">

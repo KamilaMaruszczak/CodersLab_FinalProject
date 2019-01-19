@@ -37,4 +37,9 @@ public class Sailor {
                 ", yearOfBirth=" + yearOfBirth +
                 '}';
     }
+
+    public boolean equals(Object o) {
+        Sailor sailor = (Sailor) o;
+        return this.id.equals(sailor.id);
+    }
 }

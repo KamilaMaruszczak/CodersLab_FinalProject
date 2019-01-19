@@ -24,8 +24,6 @@
     </c:when>
 </c:choose>
 
-<section>
-
 
     <div class="border box">
         <div class="row">
@@ -63,6 +61,6 @@
             </table>
         </div>
     </div>
-</section>
+
 </body>
 </html>

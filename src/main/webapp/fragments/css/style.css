@@ -52,17 +52,16 @@ margin-left {
     z-index: 1;
 }
 .box {
-    background-color: ghostwhite;
+    background-color: white;
+    margin: auto;
     margin-top: 5%;
-    margin-left: 10%;
-    margin-right: 10%;
     margin-bottom: 10%;
-    padding-top: 5%;
-    padding-bottom: 10%;
+    padding-top: 3%;
+    padding-bottom: 5%;
     padding-left: 5%;
     padding-right: 5%;
     height: auto;
-    display: inline-block;
+    width: 700px;
 }
 
 .page-header {
@@ -83,7 +82,7 @@ margin-left {
     display: inline-block;
     color: var(--link-color) !important;
     margin-top: 20px;
-    font-size: 50px;
+    font-size: 45px;
     font-weight: 900;
 }
 
@@ -192,7 +191,6 @@ p {
     display: inline-block;
     cursor: pointer;
     color: #666666;
-    font-family: Arial;
     font-size: 15px;
     font-weight: bold;
     padding: 6px 24px;

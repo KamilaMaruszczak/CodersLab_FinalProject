@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import pl.coderslab.dto.CoursesDto;
 import pl.coderslab.model.Course;
 import pl.coderslab.model.User;
 import pl.coderslab.repository.CourseRepository;
@@ -16,6 +15,7 @@ import pl.coderslab.repository.UserRepository;
 
 
 import javax.validation.Valid;
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -28,13 +28,13 @@ public class CourseController {
     @Autowired
     private UserRepository userRepository;
 
-    @Autowired
-    private CoursesDto coursesDto;
-
     @ModelAttribute("coursesType")
     public List<String> type() {
-
-        return coursesDto.getType();
+        List<String> type = new ArrayList<String>();
+        type.add("OPTYMIST");
+        type.add("EUROPA");
+        type.add("OMEGA");
+        return type;
     }
 
     @ModelAttribute("instructor")
@@ -72,7 +72,7 @@ public class CourseController {
     @RequestMapping(value = "/edit/{id}", produces = "text/html; charset=utf-8", method = RequestMethod.GET)
     public String edit(@PathVariable Long id, Model model) {
         Course course = courseRepository.findOne(id);
-        model.addAttribute("courses", course);
+        model.addAttribute("course", course);
         return "/course/add";
     }
 

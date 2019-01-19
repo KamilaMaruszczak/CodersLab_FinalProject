@@ -1,5 +1,5 @@
 <!-- Sidebar -->
-<div class="d-block">
+<div class="d-block float-left">
     <nav id="sidebar" class="z">
         <div class="sidebar-header" id="sidebarCollapse">
             <h3>LGR Instruktor</h3>

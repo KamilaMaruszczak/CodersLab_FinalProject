@@ -107,7 +107,11 @@ public class UserController {
     public String course(@PathVariable Long id, Model model, @SessionAttribute String email) {
         Course course = courseRepository.findOne(id);
         User user = userRepository.findUserByEmail(email);
-        model.addAttribute("userSailors", user.getSailors());
+        List<Sailor> savedList = course.getSailors();
+        List<Sailor> userList = user.getSailors();
+        boolean test = savedList.retainAll(userList);
+        boolean test2 = userList.removeAll(savedList);
+        model.addAttribute("userSailors", userList);
         model.addAttribute("course", course);
         model.addAttribute("sailor", new Sailor());
         return "/user/confirm";
