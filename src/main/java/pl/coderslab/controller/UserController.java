@@ -16,8 +16,9 @@ import pl.coderslab.service.UserService;
 
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 @SessionAttributes
@@ -47,13 +48,11 @@ public class UserController {
     public String add(@Valid User user, BindingResult result, @RequestParam String repeatPassword) {
 
 
-        if (result.hasErrors()) {
+        if (result.hasErrors() || !user.getPassword().equals(repeatPassword)) {
+            result.addError(new FieldError("user", "password", "hasła się nie zgadzają"));
             return "/user/add";
         }
-        if (!user.getPassword().equals(repeatPassword)) {
-            result.addError(new FieldError("user", "password", "Hasła się nie zgadzają"));
-            return "/user/add";
-        }
+
         userService.save(user);
         return "redirect:/";
 
@@ -61,12 +60,8 @@ public class UserController {
 
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public String login(HttpSession session) {
-        if (session.getAttribute("email") == null) {
+    public String login() {
             return "/user/login";
-        } else {
-            return "/user/logout";
-        }
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
@@ -109,8 +104,8 @@ public class UserController {
         User user = userRepository.findUserByEmail(email);
         List<Sailor> savedList = course.getSailors();
         List<Sailor> userList = user.getSailors();
-        boolean test = savedList.retainAll(userList);
-        boolean test2 = userList.removeAll(savedList);
+        savedList.retainAll(userList);
+        userList.removeAll(savedList);
         model.addAttribute("userSailors", userList);
         model.addAttribute("course", course);
         model.addAttribute("sailor", new Sailor());
@@ -145,10 +140,13 @@ public class UserController {
 
         Course course = courseRepository.findOne(courseId);
         List<Sailor> list = course.getSailors();
-        list.add(sailor);
-        course.setSailors(list);
-        courseRepository.save(course);
-        model.addAttribute("course", course);
+        if (list.size() < course.getNumberOfBoats()) {
+            list.add(sailor);
+            course.setSailors(list);
+            courseRepository.save(course);
+            model.addAttribute("course", course);
+        }
+
         return "redirect:/";
     }
 
@@ -182,6 +180,18 @@ public class UserController {
     public String delete(@PathVariable Long id) {
         userRepository.delete(id);
         return "redirect:/user/all";
+    }
+
+    @RequestMapping(value = "/courses", produces = "text/html; charset=utf-8")
+    public String courses(@SessionAttribute String email, Model model) {
+        User user = userRepository.findUserByEmail(email);
+        List<Sailor> sailors = user.getSailors();
+        Map<Sailor, List<Course>> map = new HashMap<>();
+        for (Sailor sailor : sailors) {
+            map.put(sailor, sailor.getCourse());
+        }
+        model.addAttribute("map", map);
+        return "/user/courses";
     }
 
 

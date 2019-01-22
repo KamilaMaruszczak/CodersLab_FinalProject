@@ -17,7 +17,7 @@
 <%@ include file="/WEB-INF/views/admin/sidebar.jsp" %>
 <section>
     <div class="border box">
-        <p>Dodaj kurs:</p><br>
+        <p>${type} kurs:</p><br>
         <form:form modelAttribute="course" method="post" class="form-horizontal">
             <div class="form-group">
                 <label class="control-label col-sm-2">Instruktor:</label>
@@ -61,7 +61,7 @@
 
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                    <input type="submit" value="Utwórz kurs"/>
+                    <input type="submit" value="ZAPISZ KURS"/>
                 </div>
             </div>
         </form:form>

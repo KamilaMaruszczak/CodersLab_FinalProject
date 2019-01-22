@@ -35,13 +35,14 @@
             <table class="paleBlueRows">
                 <thead>
                 <tr>
-                    <th scope="row" colspan="5">Lista dostepnych kursów 2019</th>
+                    <th scope="row" colspan="6">Lista dostepnych kursów 2019</th>
                 </tr>
                 <tr>
                     <th>Data rozpoczęcia</th>
                     <th>Data zakończenia</th>
                     <th>Klasa</th>
                     <th>Instruktor</th>
+                    <th>Ilość wolnych miejsc</th>
                     <th>Zapisy</th>
                 </tr>
                 </thead>
@@ -52,8 +53,16 @@
                         <td><fmt:formatDate value='${item.endDate}' pattern='dd-MM-yyyy'/></td>
                         <td> ${item.type}</td>
                         <td> ${item.instructor.name}</td>
-                        <td><a href="<c:url value = "/user/course/${item.id}"/>">ZAPISY</a></td>
+                        <td> ${item.numberOfBoats-item.sailors.size()}</td>
+                        <td>
+                            <c:choose>
+                                <c:when test="${(item.numberOfBoats-item.sailors.size())!=0}">
 
+                                    <a href="<c:url value = "/user/course/${item.id}"/>">ZAPISY</a>
+
+                                </c:when>
+                            </c:choose>
+                        </td>
                     </tr>
                 </c:forEach>
 

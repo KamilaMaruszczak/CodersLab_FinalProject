@@ -5,15 +5,15 @@
         </a>
         <ul class="nav text-uppercase">
             <li class="nav-item active">
-                <a class="nav-link disabled" href="/course/description">Kursy</a>
+                <a class="nav-link" href="/course/description">Kursy</a>
             </li>
             <li>
                 <c:choose>
                     <c:when test="${name==null}">
-                        <a class="nav-link color-header" href="/user/login">logowanie</a>
+                        <a class="nav-link color-header " href="/user/login">logowanie</a>
                     </c:when>
                     <c:otherwise>
-                        <a class="nav-link color-header" href="/user/login">wyloguj</a>
+                        <a class="nav-link color-header" href="/user/logout">wyloguj</a>
                     </c:otherwise>
                 </c:choose>
             </li>
@@ -23,10 +23,13 @@
                         <a class="nav-link color-header" href="/user/register">rejestracja</a>
                     </li>
                 </c:when>
+                <c:otherwise>
+                    <a class="nav-link color-header" href="/user/courses">moje zapisy</a>
+                </c:otherwise>
             </c:choose>
 
             <li>
-                <a class="nav-link disabled" href="/kontakt">Kontakt</a>
+                <a class="nav-link" href="/kontakt">Kontakt</a>
             </li>
             <li>
 

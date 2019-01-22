@@ -8,6 +8,7 @@ import org.hibernate.annotations.LazyCollectionOption;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
+import pl.coderslab.validator.UniqueEmail;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -31,6 +32,7 @@ public class User {
     @NotBlank
 
     @Column(unique = true)
+    @UniqueEmail
     private String email;
 
     @NotBlank

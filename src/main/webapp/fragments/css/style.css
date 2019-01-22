@@ -61,7 +61,7 @@ margin-left {
     padding-left: 5%;
     padding-right: 5%;
     height: auto;
-    width: 700px;
+    width: 800px;
 }
 
 .page-header {
@@ -69,7 +69,12 @@ margin-left {
 }
 
 .nav-link {
-    color: var(--link-color) !important;
+    color: var(--link-color);
+    font-size: 16px;
+}
+
+.blue {
+    color: blue;
     font-size: 16px;
 }
 
@@ -117,19 +122,23 @@ table.paleBlueRows {
     text-align: center;
     border-collapse: collapse;
     margin: auto;
-    width: 90%;
+    width: 95%;
+
 }
 
 table.paleBlueRows td, table.paleBlueRows th {
     border: 1px solid #FFFFFF;
     padding: 3px 2px;
+    opacity: 50%;
+
 }
 
 table.paleBlueRows tbody td {
     font-size: 20px;
+    opacity: 50%;
 }
 
-table.paleBlueRows tr:nth-child(even) {
+table.paleBlueRows tr:nth-child(odd) {
     background: #B4B7F5;
 }
 
@@ -235,6 +244,10 @@ span.icon:before {
 
 .white {
     color: white;
+}
+
+.background_white {
+    background-color: white;
 }
 
 /* ---------------------------------------------------
@@ -450,4 +463,31 @@ a.article:hover {
     #sidebarCollapse span {
         display: none;
     }
+}
+
+/*Hidden row*/
+.table tr {
+    cursor: pointer;
+}
+
+.hiddenRow {
+    padding: 0 4px !important;
+    font-size: 13px;
+}
+
+.bold {
+    font-weight: 500;
+}
+
+table.white {
+    background-color: white;
+    color: black;
+}
+
+table.white tr:nth-child(odd) {
+    background: white;
+}
+
+.green {
+    color: springgreen;
 }

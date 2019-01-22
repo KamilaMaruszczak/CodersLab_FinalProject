@@ -1,5 +1,6 @@
 <!-- Sidebar -->
-<div class="d-block float-left">
+<div class="margin-top float-left">
+    <div class="d-block float-left margin-top" id="div">
     <nav id="sidebar" class="z">
         <div class="sidebar-header" id="sidebarCollapse">
             <h3>LGR Instruktor</h3>
@@ -30,17 +31,22 @@
                     Uzytkownicy
                 </a>
             </li>
-
-        </ul>
-
-        <ul class="list-unstyled CTAs">
             <li>
                 <a href="/course/add" class="download"><i class="fa fa-plus-circle"></i> DODAJ KURS</a>
 
             </li>
+
         </ul>
 
+        <%--<ul class="list-unstyled CTAs">--%>
+        <%--<li class="active">--%>
+        <%--<a href="/course/add" class="download"><i class="fa fa-plus-circle"></i> DODAJ KURS</a>--%>
+
+        <%--</li>--%>
+        <%--</ul>--%>
+
     </nav>
+</div>
 </div>
 <!-- jQuery CDN - Slim version (=without AJAX) -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -61,4 +67,13 @@
             $('#sidebar').toggleClass('active');
         });
     });
+
+
+    $(window).scroll(function () {
+        $("#div").css({"margin-top": ($(window).scrollTop()) + "px"});
+    });
+
+
+
 </script>
+

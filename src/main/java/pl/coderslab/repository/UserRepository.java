@@ -9,10 +9,14 @@ import java.util.List;
 
 public interface UserRepository extends JpaRepository<User, Long> {
 
+    User findUserByEmail(String email);
+
     @Query("select u from User u where u.instructor = true")
     List<User> queryFindInstructors();
 
-    User findUserByEmail(String email);
+
+    @Query("select u.email from User u")
+    List<String> queryFindAllEmails();
 
 
 }

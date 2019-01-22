@@ -9,8 +9,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import pl.coderslab.model.Course;
+import pl.coderslab.model.Sailor;
 import pl.coderslab.model.User;
 import pl.coderslab.repository.CourseRepository;
+import pl.coderslab.repository.SailorRepository;
 import pl.coderslab.repository.UserRepository;
 
 
@@ -27,6 +29,9 @@ public class CourseController {
 
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private SailorRepository sailorRepository;
 
     @ModelAttribute("coursesType")
     public List<String> type() {
@@ -47,6 +52,7 @@ public class CourseController {
     @RequestMapping(value = "/add", produces = "text/html; charset=utf-8", method = RequestMethod.GET)
     public String add(Model model) {
         model.addAttribute("course", new Course());
+        model.addAttribute("type", "Dodaj");
         return "/course/add";
     }
 
@@ -73,6 +79,7 @@ public class CourseController {
     public String edit(@PathVariable Long id, Model model) {
         Course course = courseRepository.findOne(id);
         model.addAttribute("course", course);
+        model.addAttribute("type", "Edytuj");
         return "/course/add";
     }
 
@@ -91,6 +98,16 @@ public class CourseController {
     @RequestMapping(value = "/delete/{id}", produces = "text/html; charset=utf-8")
     public String delete(@PathVariable Long id) {
         courseRepository.delete(id);
+        return "redirect:/course/all";
+    }
+
+    @RequestMapping(value = "/{courseId}/delete/{sailorId}", produces = "text/html; charset=utf-8")
+    public String deleteSailor(@PathVariable Long courseId, @PathVariable Long sailorId) {
+        Course course = courseRepository.findOne(courseId);
+        List<Sailor> sailors = course.getSailors();
+        sailors.remove(sailorRepository.findOne(sailorId));
+        course.setSailors(sailors);
+        courseRepository.save(course);
         return "redirect:/course/all";
     }
 

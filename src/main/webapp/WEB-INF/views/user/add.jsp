@@ -40,13 +40,14 @@
                         <div class="col-sm-12">
                             <form:input path="password" type="password" class="form-control"/>
                         </div>
-                        <form:errors path="password" cssClass="error col-sm-offset-9 col-sm-10" element="div"/>
+
                     </div>
                     <div class="form-group row">
                         <label class="control-label col-sm-8">Powtórz hasło:</label>
                         <div class="col-sm-12">
                             <input type="password" class="form-control" name="repeatPassword"/>
                         </div>
+                        <form:errors path="password" cssClass="error col-sm-offset-9 col-sm-10" element="div"/>
                     </div>
                     <div class="form-group row">
                         <label class="control-label col-sm-8">Numer telefonu:</label>
