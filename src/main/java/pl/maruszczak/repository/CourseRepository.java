@@ -1,7 +1,7 @@
-package pl.coderslab.repository;
+package pl.maruszczak.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import pl.coderslab.model.Course;
+import pl.maruszczak.model.Course;
 
 import java.util.List;
 

@@ -1,15 +1,13 @@
-package pl.coderslab.model;
+package pl.maruszczak.model;
 
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 import org.hibernate.validator.constraints.NotBlank;
-import pl.coderslab.validator.YearOfBirth;
+import pl.maruszczak.validator.YearOfBirth;
 
 import javax.persistence.*;
-import java.util.Calendar;
 import java.util.List;
 
 @Entity

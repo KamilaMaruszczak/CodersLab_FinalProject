@@ -1,8 +1,8 @@
-package pl.coderslab.repository;
+package pl.maruszczak.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import pl.coderslab.model.User;
+import pl.maruszczak.model.User;
 
 import java.util.List;
 

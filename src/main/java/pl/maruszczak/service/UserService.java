@@ -1,10 +1,10 @@
-package pl.coderslab.service;
+package pl.maruszczak.service;
 
 import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import pl.coderslab.model.User;
-import pl.coderslab.repository.UserRepository;
+import pl.maruszczak.model.User;
+import pl.maruszczak.repository.UserRepository;
 
 @Component
 public class UserService {

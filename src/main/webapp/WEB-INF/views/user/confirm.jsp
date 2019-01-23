@@ -30,7 +30,7 @@
 
     <table class="paleBlueRows">
         <thead>
-
+        <tr></tr>
         <tr>
             <th>Data rozpoczęcia</th>
             <th>Data zakończenia</th>

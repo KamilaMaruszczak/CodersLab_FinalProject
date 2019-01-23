@@ -1,9 +1,9 @@
-package pl.coderslab.app;
+package pl.maruszczak.app;
 
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 import org.springframework.web.servlet.DispatcherServlet;
-import pl.coderslab.config.AppConfig;
+import pl.maruszczak.config.AppConfig;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;

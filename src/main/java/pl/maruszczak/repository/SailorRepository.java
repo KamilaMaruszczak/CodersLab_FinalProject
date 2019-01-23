@@ -1,8 +1,8 @@
-package pl.coderslab.repository;
+package pl.maruszczak.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import pl.coderslab.model.Sailor;
+import pl.maruszczak.model.Sailor;
 
 
 public interface SailorRepository extends JpaRepository<Sailor, Long> {

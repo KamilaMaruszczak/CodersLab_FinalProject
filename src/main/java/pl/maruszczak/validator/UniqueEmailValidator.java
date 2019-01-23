@@ -1,8 +1,7 @@
-package pl.coderslab.validator;
+package pl.maruszczak.validator;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import pl.coderslab.model.User;
-import pl.coderslab.repository.UserRepository;
+import pl.maruszczak.repository.UserRepository;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
@@ -20,8 +19,12 @@ public class UniqueEmailValidator implements ConstraintValidator<UniqueEmail, St
 
     @Override
     public boolean isValid(String email, ConstraintValidatorContext constraintValidatorContext) {
-        List<String> emailList = userRepository.queryFindAllEmails();
+        try {
+            List<String> emailList = userRepository.queryFindAllEmails();
+            return !emailList.contains(email);
+        } catch (NullPointerException e) {
+            return true;
+        }
 
-        return !emailList.contains(email);
     }
 }

@@ -1,4 +1,4 @@
-package pl.coderslab.config;
+package pl.maruszczak.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -16,9 +16,9 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
-import pl.coderslab.converter.CourseConverter;
-import pl.coderslab.converter.SailorConverter;
-import pl.coderslab.converter.UserConverter;
+import pl.maruszczak.converter.CourseConverter;
+import pl.maruszczak.converter.SailorConverter;
+import pl.maruszczak.converter.UserConverter;
 
 import javax.persistence.EntityManagerFactory;
 import javax.validation.Validator;
@@ -26,9 +26,9 @@ import java.util.Locale;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan("pl.coderslab")
+@ComponentScan("pl.maruszczak")
 @EnableTransactionManagement
-@EnableJpaRepositories(basePackages = "pl.coderslab.repository")
+@EnableJpaRepositories(basePackages = "pl.maruszczak.repository")
 public class AppConfig extends WebMvcConfigurerAdapter {
 
     @Bean

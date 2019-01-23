@@ -1,4 +1,4 @@
-package pl.coderslab.filter;
+package pl.maruszczak.filter;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;

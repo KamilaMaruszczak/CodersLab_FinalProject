@@ -1,9 +1,9 @@
-package pl.coderslab.converter;
+package pl.maruszczak.converter;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.converter.Converter;
-import pl.coderslab.model.Course;
-import pl.coderslab.repository.CourseRepository;
+import pl.maruszczak.model.Course;
+import pl.maruszczak.repository.CourseRepository;
 
 
 public class CourseConverter implements Converter<String, Course> {

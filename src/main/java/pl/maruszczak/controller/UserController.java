@@ -1,4 +1,4 @@
-package pl.coderslab.controller;
+package pl.maruszczak.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -6,13 +6,13 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;
-import pl.coderslab.model.Course;
-import pl.coderslab.model.Sailor;
-import pl.coderslab.model.User;
-import pl.coderslab.repository.CourseRepository;
-import pl.coderslab.repository.SailorRepository;
-import pl.coderslab.repository.UserRepository;
-import pl.coderslab.service.UserService;
+import pl.maruszczak.model.Course;
+import pl.maruszczak.model.Sailor;
+import pl.maruszczak.model.User;
+import pl.maruszczak.repository.CourseRepository;
+import pl.maruszczak.repository.SailorRepository;
+import pl.maruszczak.repository.UserRepository;
+import pl.maruszczak.service.UserService;
 
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
@@ -54,7 +54,7 @@ public class UserController {
         }
 
         userService.save(user);
-        return "redirect:/";
+        return "redirect:/login";
 
     }
 

@@ -1,17 +1,14 @@
-package pl.coderslab.model;
+package pl.maruszczak.model;
 
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
-import org.hibernate.validator.constraints.NotEmpty;
-import pl.coderslab.validator.UniqueEmail;
+import pl.maruszczak.validator.UniqueEmail;
 
 import javax.persistence.*;
-import java.util.Date;
 import java.util.List;
 
 

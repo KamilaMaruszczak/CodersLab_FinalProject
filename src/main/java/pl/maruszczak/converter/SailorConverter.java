@@ -1,9 +1,9 @@
-package pl.coderslab.converter;
+package pl.maruszczak.converter;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.converter.Converter;
-import pl.coderslab.model.Sailor;
-import pl.coderslab.repository.SailorRepository;
+import pl.maruszczak.model.Sailor;
+import pl.maruszczak.repository.SailorRepository;
 
 
 public class SailorConverter implements Converter<String, Sailor> {

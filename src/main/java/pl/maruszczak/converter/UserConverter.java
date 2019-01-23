@@ -1,9 +1,9 @@
-package pl.coderslab.converter;
+package pl.maruszczak.converter;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.converter.Converter;
-import pl.coderslab.model.User;
-import pl.coderslab.repository.UserRepository;
+import pl.maruszczak.model.User;
+import pl.maruszczak.repository.UserRepository;
 
 public class UserConverter implements Converter<String, User> {
     @Autowired
