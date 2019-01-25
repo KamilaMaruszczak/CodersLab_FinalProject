@@ -31,9 +31,6 @@
             <li>
                 <a class="nav-link" href="/contact">Kontakt</a>
             </li>
-            <li>
-
-            </li>
         </ul>
         <div>
             <div id="loggedUser" class="circle-div text-center icon-user"><i class="fa fa-anchor"></i>
