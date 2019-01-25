@@ -36,4 +36,10 @@ public class HomeController {
         return "/course/description";
     }
 
+    @RequestMapping(value = "/contact", produces = "text/html; charset=utf-8")
+    public String contact() {
+
+        return "/contact";
+    }
+
 }

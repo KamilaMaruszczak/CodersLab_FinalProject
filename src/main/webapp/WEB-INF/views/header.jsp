@@ -29,7 +29,7 @@
             </c:choose>
 
             <li>
-                <a class="nav-link" href="/kontakt">Kontakt</a>
+                <a class="nav-link" href="/contact">Kontakt</a>
             </li>
             <li>
 

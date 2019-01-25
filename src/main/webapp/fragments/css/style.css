@@ -51,6 +51,14 @@ margin-left {
 .z {
     z-index: 1;
 }
+
+.font20 {
+    font-size: 20px;
+}
+
+.marginL {
+    margin-left: 20px;
+}
 .box {
     background-color: white;
     margin: auto;
@@ -61,7 +69,9 @@ margin-left {
     padding-left: 5%;
     padding-right: 5%;
     height: auto;
-    width: 800px;
+    width: auto;
+    max-width: 900px;
+    display: table;
 }
 
 .page-header {
@@ -499,3 +509,21 @@ table.white tr:nth-child(odd) {
     color: springgreen;
 }
 
+.width300 {
+    width: 300px;
+}
+
+.width400 {
+    width: 400px;
+}
+
+.mapouter {
+    text-align: right;
+    width: 400px;
+}
+
+.gmap_canvas {
+    overflow: hidden;
+    background: none !important;
+    width: 400px;
+}
