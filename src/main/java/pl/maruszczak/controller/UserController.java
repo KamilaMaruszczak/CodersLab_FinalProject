@@ -45,7 +45,7 @@ public class UserController {
     }
 
     @RequestMapping(value = "/register", produces = "text/html; charset=utf-8", method = {RequestMethod.POST})
-    public String add(@Valid User user, BindingResult result, @RequestParam String repeatPassword) {
+    public String add(@Valid User user, BindingResult result, @RequestParam String repeatPassword, HttpSession session) {
 
 
         if (result.hasErrors() || !user.getPassword().equals(repeatPassword)) {
@@ -54,10 +54,16 @@ public class UserController {
         }
 
         userService.save(user);
-        return "redirect:/login";
+        sessionSet(user, session);
+        return "redirect:/";
 
     }
 
+    private void sessionSet(User user, HttpSession session) {
+        session.setAttribute("email", user.getEmail());
+        session.setAttribute("name", user.getName());
+        session.setAttribute("instructor", user.isInstructor());
+    }
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String login() {
@@ -69,10 +75,8 @@ public class UserController {
 
 
         if (userService.login(email, password)) {
-            session.setAttribute("email", email);
             User user = userRepository.findUserByEmail(email);
-            session.setAttribute("name", user.getName());
-            session.setAttribute("instructor", user.isInstructor());
+            sessionSet(user, session);
             return "redirect:/";
         } else {
             model.addAttribute("error", "Błędny adres email lub hasło");
