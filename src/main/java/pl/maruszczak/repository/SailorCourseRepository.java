@@ -14,9 +14,13 @@ public interface SailorCourseRepository extends JpaRepository<SailorCourse, Long
 
     List<SailorCourse> findAllByCourse(Course course);
 
+
     @Query("select sc.sailor from SailorCourse sc where sc.course=?1")
     List<Sailor> queryFindSailorsOnCourse(Course course);
 
     @Query("select sc.course from SailorCourse sc where sc.sailor=?1 ")
     List<Course> queryFindCoursesBySailor(Sailor sailor);
+
+    @Query("select sc from SailorCourse sc where sc.sailor=?1 and sc.course=?2")
+    SailorCourse queryFindBySailorAndCourse(Sailor sailor, Course course);
 }

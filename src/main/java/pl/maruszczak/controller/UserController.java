@@ -109,10 +109,10 @@ public class UserController {
     public String course(@PathVariable Long id, Model model, @SessionAttribute String email) {
         Course course = courseRepository.findOne(id);
         User user = userRepository.findUserByEmail(email);
-//        List<Sailor> savedList = course.getSailors();
+        List<Sailor> courseList = sailorCourseRepository.queryFindSailorsOnCourse(course);
         List<Sailor> userList = user.getSailors();
-        savedList.retainAll(userList);
-        userList.removeAll(savedList);
+        courseList.retainAll(userList);
+        userList.removeAll(courseList);
         model.addAttribute("userSailors", userList);
         model.addAttribute("course", course);
         model.addAttribute("sailor", new Sailor());
@@ -146,16 +146,10 @@ public class UserController {
     private String addSailor(String email, Sailor sailor, Long courseId, Model model) {
 
         Course course = courseRepository.findOne(courseId);
-        SailorCourse sailorCourse = new SailorCourse();
-        Integer numberOfSailorsOnCourse = sailorCourseRepository.findAllByCourse(course).size();
+        int numberOfSailorsOnCourse = sailorCourseRepository.findAllByCourse(course).size();
         if (numberOfSailorsOnCourse < course.getNumberOfBoats()) {
-            sailorCourse.setSailor(sailor);
-            sailorCourse.setCourse(course);
-            Date date = Calendar.getInstance().getTime();
-            sailorCourse.setEntryDate(date);
-            list.add(sailor);
-            course.setSailors(list);
-            courseRepository.save(course);
+            SailorCourse sailorCourse = new SailorCourse(sailor, course, Calendar.getInstance().getTime());
+            sailorCourseRepository.save(sailorCourse);
             model.addAttribute("course", course);
         }
 
@@ -200,7 +194,7 @@ public class UserController {
         List<Sailor> sailors = user.getSailors();
         Map<Sailor, List<Course>> map = new HashMap<>();
         for (Sailor sailor : sailors) {
-            map.put(sailor, sailor.getCourse());
+            map.put(sailor, sailorCourseRepository.queryFindCoursesBySailor(sailor));
         }
         model.addAttribute("map", map);
         return "/user/courses";

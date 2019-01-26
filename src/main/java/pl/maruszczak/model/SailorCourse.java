@@ -3,6 +3,7 @@ package pl.maruszczak.model;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.ColumnDefault;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -26,8 +27,18 @@ public class SailorCourse {
 
     private Date entryDate;
 
+    @ColumnDefault("false")
     private boolean confirmed;
 
+    @ColumnDefault("0")
     private Integer paid;
 
+    public SailorCourse() {
+    }
+
+    public SailorCourse(Sailor sailor, Course course, Date entryDate) {
+        this.sailor = sailor;
+        this.course = course;
+        this.entryDate = entryDate;
+    }
 }

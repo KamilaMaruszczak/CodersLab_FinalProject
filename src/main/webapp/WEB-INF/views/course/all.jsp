@@ -56,22 +56,22 @@
                         <td colspan="7" class="hiddenRow">
                             <div class="accordian-body collapse mx-auto" id="${i.index}">
                                 <table class="white">
-                                    <c:forEach items="${item.sailors}" var="sailor" varStatus="j">
+                                    <c:forEach items="${item.sailors}" var="sailorCourse" varStatus="j">
                                         <tr>
                                             <td>${j.index+1}</td>
-                                            <td>${sailor.name}</td>
-                                            <td>${2019-sailor.yearOfBirth} lat</td>
+                                            <td>${sailorCourse.sailor.name}</td>
+                                            <td>${2019-sailorCourse.sailor.yearOfBirth} lat</td>
                                             <td><c:choose>
-                                                <c:when test="${sailor.confirmed}">
+                                                <c:when test="${sailorCourse.confirmed}">
                                                     <span class="bold">POTWIERDZONY</span>
                                                 </c:when>
                                                 <c:otherwise>
-                                                    <a href="<c:url value = "/sailor/confirm/${sailor.id}"/>">POTWIERDŹ</a>
+                                                    <a href="<c:url value = "/sailor/confirm/${sailorCourse.id}"/>">POTWIERDŹ</a>
                                                 </c:otherwise>
                                             </c:choose></td>
-                                            <td>${sailor.paid}</td>
+                                            <td>${sailorCourse.paid}</td>
                                             <td>
-                                                <a href="<c:url value = "/course/${item.id}/delete/${sailor.id}"/>">USUŃ</a>
+                                                <a href="<c:url value = "/sailor/delete/${sailorCourse.id}"/>">USUŃ</a>
                                             </td>
                                         </tr>
                                     </c:forEach>

@@ -18,6 +18,7 @@ import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import pl.maruszczak.converter.CourseConverter;
 import pl.maruszczak.converter.SailorConverter;
+import pl.maruszczak.converter.SailorCourseConverter;
 import pl.maruszczak.converter.UserConverter;
 
 import javax.persistence.EntityManagerFactory;
@@ -78,6 +79,7 @@ public class AppConfig extends WebMvcConfigurerAdapter {
         registry.addConverter(getUserConverter());
         registry.addConverter(getCourseConverter());
         registry.addConverter(getSailorConverter());
+        registry.addConverter(getSailorCourseConverter());
     }
 
     @Bean
@@ -93,6 +95,11 @@ public class AppConfig extends WebMvcConfigurerAdapter {
     @Bean
     public SailorConverter getSailorConverter() {
         return new SailorConverter();
+    }
+
+    @Bean
+    public SailorCourseConverter getSailorCourseConverter() {
+        return new SailorCourseConverter();
     }
 }
 

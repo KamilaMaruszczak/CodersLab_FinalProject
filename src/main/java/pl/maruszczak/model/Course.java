@@ -40,11 +40,7 @@ public class Course {
     @OneToOne
     private User instructor;
 
-//    @ManyToMany
-//    @LazyCollection(LazyCollectionOption.FALSE)
-//    private List<Sailor> sailors;
-
-    @OneToMany(mappedBy = "course")
+    @OneToMany(mappedBy = "course", cascade = CascadeType.ALL)
     @LazyCollection(LazyCollectionOption.FALSE)
     private List<SailorCourse> sailors;
 

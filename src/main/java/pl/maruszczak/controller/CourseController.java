@@ -106,16 +106,5 @@ public class CourseController {
         return "redirect:/course/all";
     }
 
-    @RequestMapping(value = "/{courseId}/delete/{sailorId}", produces = "text/html; charset=utf-8")
-    public String deleteSailor(@PathVariable Long courseId, @PathVariable Long sailorId) {
-        Course course = courseRepository.findOne(courseId);
-        Sailor sailor = sailorRepository.findOne(sailorId);
-        List<SailorCourse> sailorCourses = sailorCourseRepository.findAllByCourse(course);
-        List<Sailor> sailors = course.getSailors();
-        sailors.remove(sailorRepository.findOne(sailorId));
-        course.setSailors(sailors);
-        courseRepository.save(course);
-        return "redirect:/";
-    }
 
 }
