@@ -55,7 +55,19 @@
                     <tr>
                         <td colspan="7" class="hiddenRow">
                             <div class="accordian-body collapse mx-auto" id="${i.index}">
-                                <table class="white">
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th>Lp.</th>
+                                        <th>Kursant</th>
+                                        <th>Wiek</th>
+                                        <th>Data zapisu</th>
+                                        <th>Potwierdzony</th>
+                                        <th>Wpłata</th>
+                                        <th>Usuń</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
                                     <c:forEach items="${item.sailors}" var="sailorCourse" varStatus="j">
                                         <tr>
                                             <td>${j.index+1}</td>
@@ -77,6 +89,7 @@
                                             </td>
                                         </tr>
                                     </c:forEach>
+                                    </tbody>
                                 </table>
                             </div>
                         </td>

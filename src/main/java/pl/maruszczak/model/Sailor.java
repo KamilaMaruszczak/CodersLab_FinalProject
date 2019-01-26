@@ -31,10 +31,6 @@ public class Sailor {
     @ManyToOne
     private User user;
 
-//    @ManyToMany(mappedBy = "sailors")
-//    @LazyCollection(LazyCollectionOption.FALSE)
-//    private List<Course> course;
-
     @OneToMany(mappedBy = "sailor")
     @LazyCollection(LazyCollectionOption.FALSE)
     private List<SailorCourse> sailorCourses;

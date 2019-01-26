@@ -41,7 +41,7 @@ public class User {
     private boolean instructor;
 
     @OneToMany(mappedBy = "user",
-            cascade = CascadeType.ALL)
+            cascade = {CascadeType.MERGE, CascadeType.REMOVE})
     @LazyCollection(LazyCollectionOption.FALSE)
     private List<Sailor> sailors;
 

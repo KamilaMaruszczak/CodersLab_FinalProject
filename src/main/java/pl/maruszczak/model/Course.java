@@ -40,7 +40,7 @@ public class Course {
     @OneToOne
     private User instructor;
 
-    @OneToMany(mappedBy = "course", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "course", cascade = {CascadeType.MERGE, CascadeType.REMOVE})
     @LazyCollection(LazyCollectionOption.FALSE)
     private List<SailorCourse> sailors;
 

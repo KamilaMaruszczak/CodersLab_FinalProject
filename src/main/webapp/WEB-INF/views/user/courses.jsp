@@ -49,7 +49,7 @@
                 <td><fmt:formatDate value='${course.endDate}' pattern='dd-MM-yyyy'/></td>
                 <td>${course.type}</td>
                 <td>${course.instructor.name}</td>
-                <td><a href="<c:url value = "/course/${course.id}/delete/${sailor.id}"/>">USUŃ</a></td>
+                <td><a href="<c:url value = "/sailor/delete/${sailor.id}"/>">USUŃ</a></td>
                 </tr>
             </c:forEach>
 
