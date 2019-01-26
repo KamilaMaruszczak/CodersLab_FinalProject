@@ -25,7 +25,7 @@
             </div>
         </div>
         <div class="my-4">
-            <table id="courses" class="paleBlueRows">
+            <table id="courses" class="table">
                 <thead>
                 <tr>
                     <th scope="row" colspan="7">Lista dostepnych kursów 2019</th>
@@ -35,14 +35,14 @@
                     <th>Data zakończenia</th>
                     <th>Klasa</th>
                     <th>Instruktor</th>
-                    <th>Ilość zapisanych</th>
+                    <th>Ilość zapisów</th>
                     <th>Edytuj</th>
                     <th>Usuń</th>
                 </tr>
                 </thead>
                 <tbody>
                 <c:forEach items="${courses}" var="item" varStatus="i">
-                    <tr data-toggle="collapse" data-target="#${i.index}" class="accordion-toggle bold">
+                    <tr data-toggle="collapse" data-target="#${i.index}" class="table-primary accordion-toggle bold">
                         <td><fmt:formatDate value='${item.startDate}' pattern='dd-MM-yyyy'/></td>
                         <td><fmt:formatDate value='${item.endDate}' pattern='dd-MM-yyyy'/></td>
                         <td> ${item.type}</td>
@@ -55,7 +55,7 @@
                     <tr>
                         <td colspan="7" class="hiddenRow">
                             <div class="accordian-body collapse mx-auto" id="${i.index}">
-                                <table class="table">
+                                <table class="table-striped">
                                     <thead>
                                     <tr>
                                         <th>Lp.</th>

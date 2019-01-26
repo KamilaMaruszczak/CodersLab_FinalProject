@@ -40,19 +40,15 @@
         </tr>
         </thead>
         <tbody>
-        <c:forEach items="${map.keySet()}" var="sailor">
+        <c:forEach items="${sailorCourseList}" var="sailorCourse">
             <tr>
-
-            <c:forEach items="${map.get(sailor)}" var="course">
-                <td>${sailor.name}</td>
-                <td><fmt:formatDate value='${course.startDate}' pattern='dd-MM-yyyy'/></td>
-                <td><fmt:formatDate value='${course.endDate}' pattern='dd-MM-yyyy'/></td>
-                <td>${course.type}</td>
-                <td>${course.instructor.name}</td>
-                <td><a href="<c:url value = "/sailor/delete/${sailor.id}"/>">USUŃ</a></td>
+                <td>${sailorCourse.sailor.name}</td>
+                <td><fmt:formatDate value='${sailorCourse.course.startDate}' pattern='dd-MM-yyyy'/></td>
+                <td><fmt:formatDate value='${sailorCourse.course.endDate}' pattern='dd-MM-yyyy'/></td>
+                <td>${sailorCourse.course.type}</td>
+                <td>${sailorCourse.course.instructor.name}</td>
+                <td><a href="<c:url value = "/sailor/delete/${sailorCourse.id}"/>">USUŃ</a></td>
                 </tr>
-            </c:forEach>
-
         </c:forEach>
         </tbody>
     </table>

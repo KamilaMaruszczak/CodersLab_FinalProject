@@ -31,6 +31,6 @@ public class SailorController {
     public String deleteSailor(@PathVariable Long sailorCourseId) {
         SailorCourse sc = sailorCourseRepository.findOne(sailorCourseId);
         sailorCourseRepository.delete(sc);
-        return "redirect:/course/all";
+        return "redirect:/";
     }
 }

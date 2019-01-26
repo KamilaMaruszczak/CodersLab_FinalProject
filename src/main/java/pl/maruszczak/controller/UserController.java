@@ -192,12 +192,11 @@ public class UserController {
     public String courses(@SessionAttribute String email, Model model) {
         User user = userRepository.findUserByEmail(email);
         List<Sailor> sailors = user.getSailors();
-        
-        Map<Sailor, List<SailorCourse>> map = new HashMap<>();
+        List<SailorCourse> list = new ArrayList<>();
         for (Sailor sailor : sailors) {
-            map.put(sailor, sailorCourseRepository.findAllBySailor(sailor));
+            list.addAll(sailorCourseRepository.findAllBySailor(sailor));
         }
-        model.addAttribute("map", map);
+        model.addAttribute("sailorCourseList", list);
         return "/user/courses";
     }
 
