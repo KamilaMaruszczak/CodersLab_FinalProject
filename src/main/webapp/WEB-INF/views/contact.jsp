@@ -30,10 +30,17 @@
 
         <div class="mapouter float-left">
             <div class="gmap_canvas">
-                <iframe id="gmap_canvas"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4981.076946810055!2d23.032940238159814!3d51.38790202038162!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTHCsDIzJzE2LjUiTiAyM8KwMDInMTQuNCJF!5e0!3m2!1spl!2spl!4v1548447773622&maptype=satellite"
-                        width="400" height="450" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
-                        style="border:0" allowfullscreen></iframe>
+                <%--<iframe id="gmap_canvas"--%>
+                <%--src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4981.076946810055!2d23.032940238159814!3d51.38790202038162!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTHCsDIzJzE2LjUiTiAyM8KwMDInMTQuNCJF!5e0!3m2!1spl!2spl!4v1548447773622&maptype=satellite"--%>
+                <%--width="400" height="450" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"--%>
+                <%--style="border:0" allowfullscreen></iframe>--%>
+                <div style="width: 400px">
+                    <iframe width="400" height="400"
+                            src="https://maps.google.com/maps?width=400&amp;height=400&amp;hl=en&amp;q=Lubelska%20Grupa%20Regatowa+(Lubelska%20Grupa%20Regatowa)&amp;ie=UTF8&amp;t=k&amp;z=15&amp;iwloc=B&amp;output=embed"
+                            frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a
+                            href="https://www.maps.ie/map-my-route/">Create a route on google maps</a></iframe>
+                </div>
+                <br/>
                 <a href="https://www.pureblack.de/wordpress-agentur/"></a></div>
 
         </div>
