@@ -61,6 +61,8 @@
                                             <td>${j.index+1}</td>
                                             <td>${sailorCourse.sailor.name}</td>
                                             <td>${2019-sailorCourse.sailor.yearOfBirth} lat</td>
+                                            <td><fmt:formatDate value='${sailorCourse.entryDate}'
+                                                                pattern='dd-MM-yyyy'/></td>
                                             <td><c:choose>
                                                 <c:when test="${sailorCourse.confirmed}">
                                                     <span class="bold">POTWIERDZONY</span>
