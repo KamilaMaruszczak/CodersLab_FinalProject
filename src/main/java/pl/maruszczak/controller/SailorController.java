@@ -15,11 +15,11 @@ public class SailorController {
     private SailorRepository sailorRepository;
 
 
-    @RequestMapping(value = "/confirm/{id}", produces = "text/html; charset=utf-8")
-    public String confirmSailor(@PathVariable Long id) {
-        Sailor sailor = sailorRepository.findOne(id);
-        sailor.setConfirmed(true);
-        sailorRepository.save(sailor);
-        return "redirect:/course/all";
-    }
+//    @RequestMapping(value = "/confirm/{id}", produces = "text/html; charset=utf-8")
+//    public String confirmSailor(@PathVariable Long id) {
+//        Sailor sailor = sailorRepository.findOne(id);
+//        sailor.getSailorCourses()
+//        sailorRepository.save(sailor);
+//        return "redirect:/course/all";
+//    }
 }

@@ -10,8 +10,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import pl.maruszczak.model.Course;
 import pl.maruszczak.model.Sailor;
+import pl.maruszczak.model.SailorCourse;
 import pl.maruszczak.model.User;
 import pl.maruszczak.repository.CourseRepository;
+import pl.maruszczak.repository.SailorCourseRepository;
 import pl.maruszczak.repository.SailorRepository;
 import pl.maruszczak.repository.UserRepository;
 
@@ -32,6 +34,9 @@ public class CourseController {
 
     @Autowired
     private SailorRepository sailorRepository;
+
+    @Autowired
+    private SailorCourseRepository sailorCourseRepository;
 
     @ModelAttribute("coursesType")
     public List<String> type() {
@@ -104,6 +109,8 @@ public class CourseController {
     @RequestMapping(value = "/{courseId}/delete/{sailorId}", produces = "text/html; charset=utf-8")
     public String deleteSailor(@PathVariable Long courseId, @PathVariable Long sailorId) {
         Course course = courseRepository.findOne(courseId);
+        Sailor sailor = sailorRepository.findOne(sailorId);
+        List<SailorCourse> sailorCourses = sailorCourseRepository.findAllByCourse(course);
         List<Sailor> sailors = course.getSailors();
         sailors.remove(sailorRepository.findOne(sailorId));
         course.setSailors(sailors);

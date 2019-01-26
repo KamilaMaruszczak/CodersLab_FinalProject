@@ -31,13 +31,13 @@ public class Sailor {
     @ManyToOne
     private User user;
 
-    @ManyToMany(mappedBy = "sailors")
+//    @ManyToMany(mappedBy = "sailors")
+//    @LazyCollection(LazyCollectionOption.FALSE)
+//    private List<Course> course;
+
+    @OneToMany(mappedBy = "sailor")
     @LazyCollection(LazyCollectionOption.FALSE)
-    private List<Course> course;
-
-    private boolean confirmed;
-
-    private Integer paid;
+    private List<SailorCourse> sailorCourses;
 
 
     @Override

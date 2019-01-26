@@ -40,9 +40,13 @@ public class Course {
     @OneToOne
     private User instructor;
 
-    @ManyToMany
+//    @ManyToMany
+//    @LazyCollection(LazyCollectionOption.FALSE)
+//    private List<Sailor> sailors;
+
+    @OneToMany(mappedBy = "course")
     @LazyCollection(LazyCollectionOption.FALSE)
-    private List<Sailor> sailors;
+    private List<SailorCourse> sailors;
 
     @Override
     public String toString() {

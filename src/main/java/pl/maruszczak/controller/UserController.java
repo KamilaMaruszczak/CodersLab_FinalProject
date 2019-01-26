@@ -8,17 +8,17 @@ import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;
 import pl.maruszczak.model.Course;
 import pl.maruszczak.model.Sailor;
+import pl.maruszczak.model.SailorCourse;
 import pl.maruszczak.model.User;
 import pl.maruszczak.repository.CourseRepository;
+import pl.maruszczak.repository.SailorCourseRepository;
 import pl.maruszczak.repository.SailorRepository;
 import pl.maruszczak.repository.UserRepository;
 import pl.maruszczak.service.UserService;
 
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Controller
 @SessionAttributes
@@ -36,6 +36,9 @@ public class UserController {
 
     @Autowired
     private SailorRepository sailorRepository;
+
+    @Autowired
+    private SailorCourseRepository sailorCourseRepository;
 
 
     @RequestMapping(value = "/register", produces = "text/html; charset=utf-8", method = RequestMethod.GET)
@@ -106,7 +109,7 @@ public class UserController {
     public String course(@PathVariable Long id, Model model, @SessionAttribute String email) {
         Course course = courseRepository.findOne(id);
         User user = userRepository.findUserByEmail(email);
-        List<Sailor> savedList = course.getSailors();
+//        List<Sailor> savedList = course.getSailors();
         List<Sailor> userList = user.getSailors();
         savedList.retainAll(userList);
         userList.removeAll(savedList);
@@ -143,8 +146,13 @@ public class UserController {
     private String addSailor(String email, Sailor sailor, Long courseId, Model model) {
 
         Course course = courseRepository.findOne(courseId);
-        List<Sailor> list = course.getSailors();
-        if (list.size() < course.getNumberOfBoats()) {
+        SailorCourse sailorCourse = new SailorCourse();
+        Integer numberOfSailorsOnCourse = sailorCourseRepository.findAllByCourse(course).size();
+        if (numberOfSailorsOnCourse < course.getNumberOfBoats()) {
+            sailorCourse.setSailor(sailor);
+            sailorCourse.setCourse(course);
+            Date date = Calendar.getInstance().getTime();
+            sailorCourse.setEntryDate(date);
             list.add(sailor);
             course.setSailors(list);
             courseRepository.save(course);
