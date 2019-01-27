@@ -28,22 +28,22 @@
 <div class="border box">
     <div class="text-center"><p>Zapisujesz na kurs:</p><br></div>
 
-    <table class="paleBlueRows">
+    <table class="table table-striped">
         <thead>
         <tr></tr>
         <tr>
-            <th>Data rozpoczęcia</th>
-            <th>Data zakończenia</th>
-            <th>Klasa</th>
-            <th>Instruktor</th>
+            <th class="align-middle">Data rozpoczęcia</th>
+            <th class="align-middle">Data zakończenia</th>
+            <th class="align-middle">Klasa</th>
+            <th class="align-middle">Instruktor</th>
         </tr>
         </thead>
         <tbody>
         <tr>
-            <td><fmt:formatDate value='${course.startDate}' pattern='dd-MM-yyyy'/></td>
-            <td><fmt:formatDate value='${course.endDate}' pattern='dd-MM-yyyy'/></td>
-            <td> ${course.type}</td>
-            <td> ${course.instructor.name}</td>
+            <td class="align-middle"><fmt:formatDate value='${course.startDate}' pattern='dd-MM-yyyy'/></td>
+            <td class="align-middle"><fmt:formatDate value='${course.endDate}' pattern='dd-MM-yyyy'/></td>
+            <td class="align-middle"> ${course.type}</td>
+            <td class="align-middle"> ${course.instructor.name}</td>
         </tr>
 
 
@@ -108,4 +108,5 @@
     </div>
 </div>
 </body>
+<%@ include file="/WEB-INF/views/footer.jsp" %>
 </html>

@@ -32,29 +32,29 @@
             </div>
         </div>
         <div class="my-4">
-            <table class="paleBlueRows">
+            <table class="table table-striped text-center">
                 <thead>
                 <tr>
                     <th scope="row" colspan="6">Lista dostepnych kursów 2019</th>
                 </tr>
                 <tr>
-                    <th>Data rozpoczęcia</th>
-                    <th>Data zakończenia</th>
-                    <th>Klasa</th>
-                    <th>Instruktor</th>
-                    <th>Ilość wolnych miejsc</th>
-                    <th>Zapisy</th>
+                    <th class="align-middle">Data rozpoczęcia</th>
+                    <th class="align-middle">Data zakończenia</th>
+                    <th class="align-middle">Klasa</th>
+                    <th class="align-middle">Instruktor</th>
+                    <th class="align-middle">Ilość wolnych miejsc</th>
+                    <th class="align-middle">Zapisy</th>
                 </tr>
                 </thead>
                 <tbody>
                 <c:forEach items="${courses}" var="item">
                     <tr>
-                        <td><fmt:formatDate value='${item.startDate}' pattern='dd-MM-yyyy'/></td>
-                        <td><fmt:formatDate value='${item.endDate}' pattern='dd-MM-yyyy'/></td>
-                        <td> ${item.type}</td>
-                        <td> ${item.instructor.name}</td>
-                        <td> ${item.numberOfBoats-item.sailors.size()}</td>
-                        <td>
+                        <td class="align-middle"><fmt:formatDate value='${item.startDate}' pattern='dd-MM-yyyy'/></td>
+                        <td class="align-middle"><fmt:formatDate value='${item.endDate}' pattern='dd-MM-yyyy'/></td>
+                        <td class="align-middle"> ${item.type}</td>
+                        <td class="align-middle"> ${item.instructor.name}</td>
+                        <td class="align-middle"> ${item.numberOfBoats-item.sailors.size()}</td>
+                        <td class="align-middle">
                             <c:choose>
                                 <c:when test="${(item.numberOfBoats-item.sailors.size())!=0}">
 
@@ -74,4 +74,5 @@
     </div>
 
 </body>
+<%@ include file="/WEB-INF/views/footer.jsp" %>
 </html>

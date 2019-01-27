@@ -25,7 +25,7 @@
             </div>
         </div>
         <div class="my-4">
-            <table id="courses" class="table">
+            <table id="courses" class="table text-center align-middle">
                 <thead>
                 <tr>
                     <th scope="row" colspan="7">Lista dostepnych kursów 2019</th>
@@ -42,40 +42,45 @@
                 </thead>
                 <tbody>
                 <c:forEach items="${courses}" var="item" varStatus="i">
-                    <tr data-toggle="collapse" data-target="#${i.index}" class="table-primary accordion-toggle bold">
-                        <td><fmt:formatDate value='${item.startDate}' pattern='dd-MM-yyyy'/></td>
-                        <td><fmt:formatDate value='${item.endDate}' pattern='dd-MM-yyyy'/></td>
-                        <td> ${item.type}</td>
-                        <td> ${item.instructor.name}</td>
-                        <td> ${item.sailors.size()}</td>
-                        <td><a href="<c:url value = "/course/edit/${item.id}"/>">EDYTUJ</a></td>
-                        <td><a href="<c:url value = "/course/delete/${item.id}"/>">USUŃ</a></td>
+                    <tr data-toggle="collapse" data-target="#${i.index}"
+                        class="table-active font-weight-bold accordion-toggle ">
+                        <td class="align-middle"><fmt:formatDate value='${item.startDate}' pattern='dd-MM-yyyy'/></td>
+                        <td class="align-middle"><fmt:formatDate value='${item.endDate}' pattern='dd-MM-yyyy'/></td>
+                        <td class="align-middle"> ${item.type}</td>
+                        <td class="align-middle"> ${item.instructor.name}</td>
+                        <td class="align-middle"> ${item.sailors.size()}</td>
+                        <td class="align-middle"><a href="<c:url value = "/course/edit/${item.id}"/>">EDYTUJ</a></td>
+                        <td class="align-middle"><a href="<c:url value = "/course/delete/${item.id}"/>">USUŃ</a></td>
 
                     </tr>
                     <tr>
                         <td colspan="7" class="hiddenRow">
-                            <div class="accordian-body collapse mx-auto" id="${i.index}">
-                                <table class="table-striped">
-                                    <thead>
-                                    <tr>
-                                        <th>Lp.</th>
-                                        <th>Kursant</th>
-                                        <th>Wiek</th>
-                                        <th>Data zapisu</th>
-                                        <th>Potwierdzony</th>
-                                        <th>Wpłata</th>
-                                        <th>Usuń</th>
+                            <div class="accordian-body collapse mx-auto width-inherit" id="${i.index}">
+                                <table class="table">
+                                    <tr class="table-active">
+                                        <td class="align-middle"></td>
+                                        <td class="align-middle">Kursant</td>
+                                        <td class="align-middle">Wiek</td>
+                                        <td class="align-middle">Zapis</td>
+                                        <td class="align-middle">Rodzic</td>
+                                        <td class="align-middle">Potwierdzony</td>
+                                        <td class="align-middle">Usuń</td>
+                                        <td class="align-middle">Wpłata</td>
+
                                     </tr>
-                                    </thead>
+
                                     <tbody>
                                     <c:forEach items="${item.sailors}" var="sailorCourse" varStatus="j">
                                         <tr>
-                                            <td>${j.index+1}</td>
-                                            <td>${sailorCourse.sailor.name}</td>
-                                            <td>${2019-sailorCourse.sailor.yearOfBirth} lat</td>
-                                            <td><fmt:formatDate value='${sailorCourse.entryDate}'
+                                            <td class="align-middle">${j.index+1}</td>
+                                            <td class="align-middle">${sailorCourse.sailor.name}</td>
+                                            <td class="align-middle">${2019-sailorCourse.sailor.yearOfBirth} lat</td>
+                                            <td class="align-middle"><fmt:formatDate value='${sailorCourse.entryDate}'
                                                                 pattern='dd-MM-yyyy'/></td>
-                                            <td><c:choose>
+                                            <td class="align-middle"><a
+                                                    href="<c:url value = "/user"/>">${sailorCourse.sailor.user.name}</a>
+                                            </td>
+                                            <td class="align-middle"><c:choose>
                                                 <c:when test="${sailorCourse.confirmed}">
                                                     <span class="bold">POTWIERDZONY</span>
                                                 </c:when>
@@ -83,10 +88,12 @@
                                                     <a href="<c:url value = "/sailor/confirm/${sailorCourse.id}"/>">POTWIERDŹ</a>
                                                 </c:otherwise>
                                             </c:choose></td>
-                                            <td>${sailorCourse.paid}</td>
-                                            <td>
+                                            <td class="align-middle">
                                                 <a href="<c:url value = "/sailor/delete/${sailorCourse.id}"/>">USUŃ</a>
                                             </td>
+                                            <td class="align-middle">${sailorCourse.paid}</td>
+
+
                                         </tr>
                                     </c:forEach>
                                     </tbody>
@@ -103,9 +110,9 @@
 </section>
 
 <script type="text/javascript">
-    $('.accordian-body').on('show.bs.collapse', function () {
+    $('.accordian-body').on('hide.bs.collapse', function () {
         $(this).closest("table")
-            .find(".collapse.in")
+            .find(".collapse")
             .not(this)
             .collapse('toggle')
     })
@@ -114,4 +121,5 @@
 
 
 </body>
+<%@ include file="/WEB-INF/views/footer.jsp" %>
 </html>

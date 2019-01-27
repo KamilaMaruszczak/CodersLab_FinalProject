@@ -27,27 +27,29 @@
 
 <div class="border box">
     <div class="text-center"><p>Moje zapisy:</p><br></div>
-    <table class="paleBlueRows">
+    <table class="table table-striped">
         <thead>
         <tr></tr>
         <tr>
-            <th>Żeglarz</th>
-            <th>Data rozpoczęcia</th>
-            <th>Data zakończenia</th>
-            <th>Klasa</th>
-            <th>Instruktor</th>
-            <th>Usuń Zapis</th>
+            <th class="align-middle">Żeglarz</th>
+            <th class="align-middle">Data rozpoczęcia</th>
+            <th class="align-middle">Data zakończenia</th>
+            <th class="align-middle">Klasa</th>
+            <th class="align-middle">Instruktor</th>
+            <th class="align-middle">Usuń Zapis</th>
         </tr>
         </thead>
         <tbody>
         <c:forEach items="${sailorCourseList}" var="sailorCourse">
             <tr>
-                <td>${sailorCourse.sailor.name}</td>
-                <td><fmt:formatDate value='${sailorCourse.course.startDate}' pattern='dd-MM-yyyy'/></td>
-                <td><fmt:formatDate value='${sailorCourse.course.endDate}' pattern='dd-MM-yyyy'/></td>
-                <td>${sailorCourse.course.type}</td>
-                <td>${sailorCourse.course.instructor.name}</td>
-                <td><a href="<c:url value = "/sailor/delete/${sailorCourse.id}"/>">USUŃ</a></td>
+                <td class="align-middle">${sailorCourse.sailor.name}</td>
+                <td class="align-middle"><fmt:formatDate value='${sailorCourse.course.startDate}'
+                                                         pattern='dd-MM-yyyy'/></td>
+                <td class="align-middle"><fmt:formatDate value='${sailorCourse.course.endDate}'
+                                                         pattern='dd-MM-yyyy'/></td>
+                <td class="align-middle">${sailorCourse.course.type}</td>
+                <td class="align-middle">${sailorCourse.course.instructor.name}</td>
+                <td class="align-middle"><a href="<c:url value = "/sailor/delete/${sailorCourse.id}"/>">USUŃ</a></td>
                 </tr>
         </c:forEach>
         </tbody>
@@ -55,4 +57,5 @@
 </div>
 
 </body>
+<%@ include file="/WEB-INF/views/footer.jsp" %>
 </html>
