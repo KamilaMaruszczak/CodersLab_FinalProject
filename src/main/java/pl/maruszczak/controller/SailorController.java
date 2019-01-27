@@ -4,9 +4,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.SessionAttribute;
 import pl.maruszczak.model.SailorCourse;
 import pl.maruszczak.repository.SailorCourseRepository;
 import pl.maruszczak.repository.SailorRepository;
+
+import javax.servlet.http.HttpSession;
 
 @Controller
 @RequestMapping("/sailor")
@@ -28,9 +31,13 @@ public class SailorController {
     }
 
     @RequestMapping(value = "/delete/{sailorCourseId}", produces = "text/html; charset=utf-8")
-    public String deleteSailor(@PathVariable Long sailorCourseId) {
+    public String deleteSailor(@PathVariable Long sailorCourseId, @SessionAttribute boolean instructor) {
         SailorCourse sc = sailorCourseRepository.findOne(sailorCourseId);
         sailorCourseRepository.delete(sc);
-        return "redirect:/";
+        if (instructor) {
+            return "redirect:/course/all";
+        } else {
+            return "redirect:/user/courses";
+        }
     }
 }

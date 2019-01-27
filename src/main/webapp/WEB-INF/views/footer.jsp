@@ -9,7 +9,7 @@
     <div class="text-center">
         <small>
             Site & WebApp Project by <a href="https://www.linkedin.com/in/kamila-maruszczak/">Kamila Maruszczak</a><br>
-            Background Designed by <a href="http://www.freepik.com">Freepik</a>
+            Background Image Designed by <a href="http://www.freepik.com">Freepik</a>
         </small>
     </div>
 </footer>

@@ -35,7 +35,7 @@
             <table class="table table-striped text-center">
                 <thead>
                 <tr>
-                    <th scope="row" colspan="6">Lista dostepnych kursów 2019</th>
+                    <th scope="row" colspan="6"><h3>Lista kursów żeglarskich 2019</h3></th>
                 </tr>
                 <tr>
                     <th class="align-middle">Data rozpoczęcia</th>

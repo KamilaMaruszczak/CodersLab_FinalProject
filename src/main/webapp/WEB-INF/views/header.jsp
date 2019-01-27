@@ -5,7 +5,7 @@
         </a>
         <ul class="nav text-uppercase">
             <li class="nav-item active">
-                <a class="nav-link" href="/course/description">Kursy</a>
+                <a class="nav-link" href="/description">Kursy</a>
             </li>
             <li>
                 <c:choose>

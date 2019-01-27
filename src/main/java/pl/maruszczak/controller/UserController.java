@@ -66,11 +66,12 @@ public class UserController {
         session.setAttribute("email", user.getEmail());
         session.setAttribute("name", user.getName());
         session.setAttribute("instructor", user.isInstructor());
+
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String login() {
-            return "/user/login";
+        return "/user/login";
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
@@ -80,7 +81,13 @@ public class UserController {
         if (userService.login(email, password)) {
             User user = userRepository.findUserByEmail(email);
             sessionSet(user, session);
-            return "redirect:/";
+
+            if (user.isInstructor()) {
+                return "redirect:/course/all";
+            } else {
+                return "redirect:/";
+            }
+
         } else {
             model.addAttribute("error", "Błędny adres email lub hasło");
             return "/user/login";

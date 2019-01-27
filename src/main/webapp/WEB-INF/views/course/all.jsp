@@ -28,7 +28,7 @@
             <table id="courses" class="table text-center align-middle">
                 <thead>
                 <tr>
-                    <th scope="row" colspan="7">Lista dostepnych kursów 2019</th>
+                    <th scope="row" colspan="7"><h3>Lista kursów żeglarskich 2019</h3></th>
                 </tr>
                 <tr>
                     <th>Data rozpoczęcia</th>

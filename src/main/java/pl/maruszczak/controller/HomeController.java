@@ -30,10 +30,10 @@ public class HomeController {
         return "/home";
     }
 
-    @RequestMapping(value = "/course/description", produces = "text/html; charset=utf-8")
+    @RequestMapping(value = "/description", produces = "text/html; charset=utf-8")
     public String desc() {
 
-        return "/course/description";
+        return "/description";
     }
 
     @RequestMapping(value = "/contact", produces = "text/html; charset=utf-8")
