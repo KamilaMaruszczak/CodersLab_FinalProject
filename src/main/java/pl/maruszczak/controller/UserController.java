@@ -66,6 +66,7 @@ public class UserController {
         session.setAttribute("email", user.getEmail());
         session.setAttribute("name", user.getName());
         session.setAttribute("instructor", user.isInstructor());
+        session.setAttribute("admin", user.isAdmin());
 
     }
 

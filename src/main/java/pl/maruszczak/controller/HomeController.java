@@ -1,14 +1,18 @@
 package pl.maruszczak.controller;
 
+import com.itextpdf.text.pdf.PdfReader;
+import com.itextpdf.text.pdf.parser.PdfTextExtractor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import pl.maruszczak.model.Course;
 import pl.maruszczak.repository.CourseRepository;
 
+import java.io.IOException;
 import java.util.List;
 
 
@@ -40,6 +44,12 @@ public class HomeController {
     public String contact() {
 
         return "/contact";
+    }
+
+    @RequestMapping(value = "/regulamin", produces = "text/html; charset=utf-8")
+    public String regulamin(Model model) {
+
+        return "/regulamin";
     }
 
 }

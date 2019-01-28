@@ -7,6 +7,7 @@
 --%>
 <footer>
     <div class="text-center">
+        <a href="/regulamin" class="font-weight-bold">Regulamin Serwisu</a><br>
         <small>
             Site & WebApp Project by <a href="https://www.linkedin.com/in/kamila-maruszczak/">Kamila Maruszczak</a><br>
             Background Image Designed by <a href="http://www.freepik.com">Freepik</a>

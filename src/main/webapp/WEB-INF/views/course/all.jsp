@@ -36,8 +36,12 @@
                     <th>Klasa</th>
                     <th>Instruktor</th>
                     <th>Ilość zapisów</th>
-                    <th>Edytuj</th>
-                    <th>Usuń</th>
+                    <c:choose>
+                        <c:when test="${admin}">
+                            <th>Edytuj</th>
+                            <th>Usuń</th>
+                        </c:when>
+                    </c:choose>
                 </tr>
                 </thead>
                 <tbody>
@@ -49,14 +53,20 @@
                         <td class="align-middle"> ${item.type}</td>
                         <td class="align-middle"> ${item.instructor.name}</td>
                         <td class="align-middle"> ${item.sailors.size()}</td>
-                        <td class="align-middle"><a href="<c:url value = "/course/edit/${item.id}"/>">EDYTUJ</a></td>
-                        <td class="align-middle"><a href="<c:url value = "/course/delete/${item.id}"/>">USUŃ</a></td>
+                        <c:choose>
+                            <c:when test="${admin}">
+                                <td class="align-middle"><a href="<c:url value = "/course/edit/${item.id}"/>">EDYTUJ</a>
+                                </td>
+                                <td class="align-middle"><a href="<c:url value = "/course/delete/${item.id}"/>">USUŃ</a>
+                                </td>
+                            </c:when>
+                        </c:choose>
 
                     </tr>
                     <tr>
                         <td colspan="7" class="hiddenRow">
                             <div class="accordian-body collapse mx-auto width-inherit" id="${i.index}">
-                                <table class="table">
+                                <table class="table width-inherit">
                                     <tr class="table-active">
                                         <td class="align-middle"></td>
                                         <td class="align-middle">Kursant</td>
@@ -64,8 +74,13 @@
                                         <td class="align-middle">Zapis</td>
                                         <td class="align-middle">Rodzic</td>
                                         <td class="align-middle">Potwierdzony</td>
-                                        <td class="align-middle">Usuń</td>
+                                        <c:choose>
+                                            <c:when test="${admin}">
+                                                <td class="align-middle">Usuń</td>
+                                            </c:when>
+                                        </c:choose>
                                         <td class="align-middle">Wpłata</td>
+
 
                                     </tr>
 
@@ -76,7 +91,7 @@
                                             <td class="align-middle">${sailorCourse.sailor.name}</td>
                                             <td class="align-middle">${2019-sailorCourse.sailor.yearOfBirth} lat</td>
                                             <td class="align-middle"><fmt:formatDate value='${sailorCourse.entryDate}'
-                                                                pattern='dd-MM-yyyy'/></td>
+                                                                                     pattern='dd-MM-yyyy'/></td>
                                             <td class="align-middle"><a
                                                     href="<c:url value = "/user"/>">${sailorCourse.sailor.user.name}</a>
                                             </td>
@@ -85,11 +100,20 @@
                                                     <span class="bold">POTWIERDZONY</span>
                                                 </c:when>
                                                 <c:otherwise>
-                                                    <a href="<c:url value = "/sailor/confirm/${sailorCourse.id}"/>">POTWIERDŹ</a>
+                                                    <c:choose>
+                                                        <c:when test="${admin}">
+                                                            <a href="<c:url value = "/sailor/confirm/${sailorCourse.id}"/>">POTWIERDŹ</a>
+                                                        </c:when>
+                                                    </c:choose>
                                                 </c:otherwise>
                                             </c:choose></td>
                                             <td class="align-middle">
-                                                <a href="<c:url value = "/sailor/delete/${sailorCourse.id}"/>">USUŃ</a>
+                                                <c:choose>
+                                                    <c:when test="${admin}">
+                                                        <a href="<c:url value = "/sailor/delete/${sailorCourse.id}"/>">USUŃ</a>
+                                                    </c:when>
+                                                </c:choose>
+
                                             </td>
                                             <td class="align-middle">${sailorCourse.paid}</td>
 

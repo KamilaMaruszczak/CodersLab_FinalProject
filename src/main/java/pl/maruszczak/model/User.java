@@ -40,6 +40,8 @@ public class User {
 
     private boolean instructor;
 
+    private boolean admin;
+
     @OneToMany(mappedBy = "user",
             cascade = {CascadeType.MERGE, CascadeType.REMOVE})
     @LazyCollection(LazyCollectionOption.FALSE)

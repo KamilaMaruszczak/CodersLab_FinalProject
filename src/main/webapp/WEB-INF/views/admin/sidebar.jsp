@@ -9,24 +9,30 @@
 
 
         <ul class="list-unstyled components">
-            <li class="active">
-                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+            <%--<li class="active">--%>
+            <%--<a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">--%>
+            <%--<i class="fas fa-dharmachakra"></i>--%>
+            <%--Kursy--%>
+            <%--</a>--%>
+            <%--<ul class="collapse list-unstyled" id="homeSubmenu">--%>
+            <%--<li>--%>
+            <%--<a href="/course/add" class="white">Dodaj kurs</a>--%>
+            <%--</li>--%>
+            <%--<li>--%>
+            <%--<a href="/course/all" class="white">Zobacz kursy</a>--%>
+            <%--</li>--%>
+
+            <%--</ul>--%>
+            <%--</li>--%>
+
+            <li>
+                <a href="/course/all" class="white">
                     <i class="fas fa-dharmachakra"></i>
                     Kursy
                 </a>
-                <ul class="collapse list-unstyled" id="homeSubmenu">
-                    <li>
-                        <a href="/course/add" class="white">Dodaj kurs</a>
-                    </li>
-                    <li>
-                        <a href="/course/all" class="white">Zobacz kursy</a>
-                    </li>
-
-                </ul>
             </li>
-
             <li>
-                <a href="#" class="white">
+                <a href="/user/all" class="white">
                     <i class="fas fa-users"></i>
                     Uzytkownicy
                 </a>

@@ -61,7 +61,10 @@
                             <input type="submit" class="myButton" value="ZAREJESTRUJ"/>
                         </div>
                     </div>
-
+                    <div class="text-center">
+                        <small>Klikając zarejestruj, akceptujesz <a href="/regulamin" rel="noopener noreferrer"
+                                                                    target="_blank">Regulamin </a></small>
+                    </div>
                 </form:form>
             </div>
         </div>
