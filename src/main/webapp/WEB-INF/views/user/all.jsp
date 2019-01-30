@@ -32,11 +32,11 @@
                 <th class="align-middle">Email</th>
                 <th class="align-middle">Telefon</th>
                 <th class="align-middle">Instruktor</th>
-                <c:choose>
-                    <c:when test="${admin}">
+
+                <c:if test="${admin}">
                         <th class="align-middle">Usuń</th>
-                    </c:when>
-                </c:choose>
+                </c:if>
+
 
             </tr>
             </thead>
@@ -48,19 +48,17 @@
                     <td class="align-middle"> ${user.email}</td>
                     <td class="align-middle"> ${user.phone}</td>
                     <td class="align-middle">
-                        <c:choose>
-                            <c:when test="${user.instructor}">
-                                INSTRUKTOR
-                            </c:when>
-                        </c:choose></td>
 
-                    <c:choose>
-                        <c:when test="${admin}">
+                        <c:if test="${user.instructor}">
+                        INSTRUKTOR
+                        </c:if>
+
+
+                        <c:if test="${admin}">
                             <td class="align-middle">
                                 <a href="<c:url value = "/user/delete/${user.id}"/>">USUŃ</a>
                             </td>
-                        </c:when>
-                    </c:choose>
+                    </c:if>
 
 
                 </tr>
