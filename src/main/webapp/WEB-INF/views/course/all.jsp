@@ -115,13 +115,10 @@
                                             <c:if test="${admin}">
                                                 <td class="align-middle text-center">
                                                     <form method="POST">
-                                                        <div class="row form-group align-middle zeromargin">
+                                                        <div class="row form-group align-middle zeromargin margin-top">
                                                             <input type="text" class="form-control width60"
                                                                    name="paid">
-
                                                             <input type="submit" value="+"/>
-                                                                <%--<button type="submit" class="item-right width10 text-center"><i class="fa fa-pencil-square-o"></i></button>--%>
-
                                                         </div>
                                                     </form>
                                                 </td>
@@ -132,8 +129,8 @@
 
 
                                         </tr>
-                                        <tr class="hide" id="parent">
-                                            <td colspan="8" class="text-center">
+                                        <tr class="hide table-info" id="parent">
+                                            <td colspan="9" class="text-center">
                                                 Rodzic: ${sailorCourse.sailor.user.name} &nbsp;
                                                 tel: ${sailorCourse.sailor.user.phone} &nbsp;
                                                 email: ${sailorCourse.sailor.user.email}
@@ -163,8 +160,9 @@
     })
 
     var courses = $('#courses');
-    courses.on("click", "'i.far fa-address-card'", function () {
-        $(this).parent().next("#parent")
+    // var parentCard = courses.find("i.far fa-address-card");
+    courses.on("click", "i.far.fa-address-card", function () {
+        $(this).parent().parent().next("#parent")
             .toggle();
 
     })
