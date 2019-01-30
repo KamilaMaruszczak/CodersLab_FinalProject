@@ -25,7 +25,7 @@
             </div>
         </div>
         <div class="my-4">
-            <form method="POST" id="my_form"></form>
+
             <table id="courses" class="table text-center align-middle">
                 <thead>
                 <tr>
@@ -76,12 +76,11 @@
                                         <td class="align-middle">Zapis</td>
                                         <td class="align-middle">Rodzic</td>
                                         <td class="align-middle">Potwierdzony</td>
-
+                                        <td class="align-middle">Wpłata</td>
                                         <c:if test="${admin}">
+                                            <td class="align-middle">Dodaj&nbsp;wpłatę</td>
                                             <td class="align-middle">Usuń</td>
                                         </c:if>
-
-                                        <td class="align-middle">Wpłata</td>
 
 
                                     </tr>
@@ -99,7 +98,7 @@
                                             <td class="align-middle">
                                                 <c:choose>
                                                     <c:when test="${sailorCourse.confirmed}">
-                                                        <span class="bold">POTWIERDZONY</span>
+                                                        <span class="bold">POTWIERDZONY </span>
                                                     </c:when>
                                                     <c:otherwise>
 
@@ -109,47 +108,39 @@
 
                                                     </c:otherwise>
                                                 </c:choose></td>
+                                            <td class="align-middle text-center">
+                                                <span class="bold">${sailorCourse.paid}</span></td>
+
+
                                             <c:if test="${admin}">
+                                                <td class="align-middle text-center">
+                                                    <form method="POST">
+                                                        <div class="row form-group align-middle zeromargin">
+                                                            <input type="text" class="form-control width60"
+                                                                   name="paid">
+
+                                                            <input type="submit" value="+"/>
+                                                                <%--<button type="submit" class="item-right width10 text-center"><i class="fa fa-pencil-square-o"></i></button>--%>
+
+                                                        </div>
+                                                    </form>
+                                                </td>
                                                 <td class="align-middle">
                                                     <a href="<c:url value = "/sailor/delete/${sailorCourse.id}"/>">USUŃ</a>
                                                 </td>
                                             </c:if>
 
-                                            <td class="align-middle">
 
-
-                                                    ${sailorCourse.paid}
-
-
-                                                <c:if test="${admin}">
-                                                    <%--<input type="text" name="company" form="my_form" />--%>
-                                                    <%--<button type="button" form="my_form">ok</button>--%>
-                                                    <div class="row form-group">
-                                                        <div class="input-group">
-
-                                                            <input type="text" class="form-control" form="my_form"
-                                                                   name="paid">
-                                                            <button type="submit" class="myButton item-right"><i
-                                                                    class="fa fa-pencil-square"></i></button>
-
-                                                                <%--<span class="input-group-addon success"><span class="glyphicon glyphicon-ok"></span></span>--%>
-                                                        </div>
-                                                    </div>
-                                                </c:if>
-
+                                        </tr>
+                                        <tr class="hide" id="parent">
+                                            <td colspan="8" class="text-center">
+                                                Rodzic: ${sailorCourse.sailor.user.name} &nbsp;
+                                                tel: ${sailorCourse.sailor.user.phone} &nbsp;
+                                                email: ${sailorCourse.sailor.user.email}
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td colspan="8" class="hiddenRow" id="parent">
-                                                <div data-role="collapsible" class="mx-auto width-inherit"
-                                                     id="${j.index}"
-                                                     data-collapsed="true">
-                                                        ${sailorCourse.sailor.user.name}
 
 
-                                                </div>
-                                            </td>
-                                        </tr>
                                     </c:forEach>
                                     </tbody>
                                 </table>
@@ -171,13 +162,12 @@
             .collapse('toggle')
     })
 
-    var button = $('far fa-address-card');
-    button.on("click", function () {
-        $(this).closest("#parent")
-            .collapse('toggle')
+    var courses = $('#courses');
+    courses.on("click", "'i.far fa-address-card'", function () {
+        $(this).parent().next("#parent")
+            .toggle();
 
     })
-
 
 
 </script>
