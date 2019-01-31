@@ -84,8 +84,8 @@ margin-left {
 }
 
 .blue {
-    color: blue;
-    font-size: 16px;
+    color: #007bff;
+    font-size: 20px;
 }
 
 .color-header {
@@ -496,4 +496,14 @@ a.article:hover {
     overflow: hidden;
     background: none !important;
     width: 400px;
+}
+
+.paddingTB {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.paddingLR {
+    padding-left: 0px;
+    padding-right: 0px;
 }

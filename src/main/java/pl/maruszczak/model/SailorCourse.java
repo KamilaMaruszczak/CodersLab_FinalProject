@@ -32,8 +32,7 @@ public class SailorCourse {
     @ColumnDefault("false")
     private boolean confirmed;
 
-    @ColumnDefault("0")
-    private Integer paid;
+    private String paid;
 
     public SailorCourse() {
     }

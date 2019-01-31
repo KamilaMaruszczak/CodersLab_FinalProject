@@ -2,14 +2,12 @@ package pl.maruszczak.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.SessionAttribute;
+
+import org.springframework.web.bind.annotation.*;
 import pl.maruszczak.model.SailorCourse;
 import pl.maruszczak.repository.SailorCourseRepository;
 import pl.maruszczak.repository.SailorRepository;
 
-import javax.servlet.http.HttpSession;
 
 @Controller
 @RequestMapping("/sailor")
@@ -39,5 +37,13 @@ public class SailorController {
         } else {
             return "redirect:/user/courses";
         }
+    }
+
+    @RequestMapping(value = "/payment/{sailorCourseId}", produces = "text/html; charset=utf-8", method = RequestMethod.POST)
+    public String payment(@RequestParam String paid, @PathVariable Long sailorCourseId) {
+        SailorCourse sc = sailorCourseRepository.findOne(sailorCourseId);
+        sc.setPaid(paid);
+        sailorCourseRepository.save(sc);
+        return "redirect:/course/all";
     }
 }

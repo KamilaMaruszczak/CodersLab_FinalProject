@@ -25,13 +25,13 @@
 <section>
 
     <div class="border box">
-        <div class="text-center"><p>Czy chcesz się wylogować?</p><br></div>
+        <div class="text-center"><p>Czy chcesz usunąć?</p><br></div>
         <div class="row">
             <div class="mx-auto">
-                <a href="logout">
-                    <button class="myButton">WYLOGUJ</button>
+                <a href="/course/delete/{id}">
+                    <button class="myButton">USUŃ</button>
                 </a>
-                <a href="/">
+                <a href="/course/all">
                     <button class="myButton">ZREZYGNUJ</button>
                 </a>
             </div>

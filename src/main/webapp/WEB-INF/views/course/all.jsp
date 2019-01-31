@@ -76,9 +76,9 @@
                                         <td class="align-middle">Zapis</td>
                                         <td class="align-middle">Rodzic</td>
                                         <td class="align-middle">Potwierdzony</td>
-                                        <td class="align-middle">Wpłata</td>
+                                        <td class="align-middle text-center">Wpłata</td>
                                         <c:if test="${admin}">
-                                            <td class="align-middle">Dodaj&nbsp;wpłatę</td>
+                                            <td class="align-middle">Zapisz&nbsp;wpł.</td>
                                             <td class="align-middle">Usuń</td>
                                         </c:if>
 
@@ -87,13 +87,14 @@
 
                                     <tbody>
                                     <c:forEach items="${item.sailors}" var="sailorCourse" varStatus="j">
-                                        <tr>
-                                            <td class="align-middle">${j.index+1}</td>
+                                        <tr class="">
+                                            <td class="align-middle pa">${j.index+1}</td>
                                             <td class="align-middle">${sailorCourse.sailor.name}</td>
                                             <td class="align-middle">${2019-sailorCourse.sailor.yearOfBirth} lat</td>
                                             <td class="align-middle"><fmt:formatDate value='${sailorCourse.entryDate}'
                                                                                      pattern='dd-MM-yyyy'/></td>
-                                            <td class="align-middle text-center"><i class="far fa-address-card"></i>
+                                            <td class="align-middle text-center"><i
+                                                    class="far fa-address-card blue"></i>
                                             </td>
                                             <td class="align-middle">
                                                 <c:choose>
@@ -114,11 +115,14 @@
 
                                             <c:if test="${admin}">
                                                 <td class="align-middle text-center">
-                                                    <form method="POST">
+                                                    <form method="post" action="/sailor/payment/${sailorCourse.id}">
+                                                            <%--<input type="hidden" name="sailorCourseId" value="${sailorCourse.id}">--%>
                                                         <div class="row form-group align-middle zeromargin margin-top">
                                                             <input type="text" class="form-control width60"
                                                                    name="paid">
-                                                            <input type="submit" value="+"/>
+                                                            <button type="submit" class="myButton paddingLR"><i
+                                                                    class="far fa-check-square blue"></i></button>
+                                                                <%--<input type="submit" value="+"/>--%>
                                                         </div>
                                                     </form>
                                                 </td>
