@@ -19,7 +19,7 @@
     <div class="border box">
         <div class="text-center"><p>${type} kurs:</p><br></div>
         <form:form modelAttribute="course" method="post">
-            <div class="form-group row">
+            <div class="form-group row ">
                 <label class="control-label col-sm-4">Instruktor:</label>
                 <div class="col-sm-5">
                     <form:select path="instructor">

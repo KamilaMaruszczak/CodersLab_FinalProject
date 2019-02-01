@@ -24,7 +24,7 @@
         <table class="table table-striped text-center">
             <thead>
             <tr>
-                <th scope="row" colspan="6"><h3>Lista zarejestrowanych użytkowników</h3></th>
+                <th scope="row" colspan="7"><h3>Lista zarejestrowanych użytkowników</h3></th>
             </tr>
             <tr>
                 <th class="align-middle"></th>
@@ -34,7 +34,8 @@
                 <th class="align-middle">Instruktor</th>
 
                 <c:if test="${admin}">
-                        <th class="align-middle">Usuń</th>
+                    <th class="align-middle">Usuń</th>
+                    <th class="align-middle">Edytuj</th>
                 </c:if>
 
 
@@ -55,9 +56,12 @@
 
 
                         <c:if test="${admin}">
-                            <td class="align-middle">
-                                <a href="<c:url value = "/user/delete/${user.id}"/>">USUŃ</a>
-                            </td>
+                    <td class="align-middle">
+                        <a href="<c:url value = "/user/delete/${user.id}"/>">USUŃ</a>
+                    </td>
+                    <td class="align-middle">
+                        <a href="<c:url value = "/user/edit/${user.id}"/>">EDYTUJ</a>
+                    </td>
                     </c:if>
 
 

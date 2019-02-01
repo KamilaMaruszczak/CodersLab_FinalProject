@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebFilter(urlPatterns = {"/course/delete", "/course/add", "/user/all"})
+@WebFilter(urlPatterns = {"/course/delete", "/course/add", "/user/all", "/user/edit", "/user/resetpasswod"})
 public class AdminFilter implements Filter {
     public void destroy() {
     }

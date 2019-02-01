@@ -48,6 +48,30 @@ margin-left {
 
 }
 
+.bluebox {
+    border-radius: 16px;
+    border-style: dashed;
+    border-color: white;
+    background-color: lightskyblue;
+    color: white;
+    padding: 5px;
+    max-width: 520px;
+
+}
+
+#i {
+    padding: 10px;
+    display: block;
+    float: left;
+    font-size: 50px;
+    padding-right: 20px;
+}
+
+#i_span {
+    margin-right: 15px;
+}
+
+
 .z {
     z-index: 1;
 }
@@ -59,13 +83,17 @@ margin-left {
 .marginL {
     margin-left: 20px;
 }
+
+.margin100 {
+    margin-left: -115px;
+}
 .box {
     background-color: white;
     margin: auto;
     margin-top: 5%;
     margin-bottom: 10%;
     padding-top: 3%;
-    padding-bottom: 5%;
+    padding-bottom: 3%;
     padding-left: 5%;
     padding-right: 5%;
     height: auto;

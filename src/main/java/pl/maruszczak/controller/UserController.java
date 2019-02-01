@@ -175,18 +175,35 @@ public class UserController {
     public String edit(@PathVariable Long id, Model model) {
         User user = userRepository.findOne(id);
         model.addAttribute("user", user);
-        return "/user/add";
+        return "/user/edit";
     }
 
     @RequestMapping(value = "/edit/{id}", produces = "text/html; charset=utf-8", method = RequestMethod.POST)
-    public String update(@Valid User user, BindingResult result) {
-
-        if (result.hasErrors()) {
-            return "/user/add";
+    public String update(@PathVariable Long id, @RequestParam Boolean instructor, @RequestParam Boolean admin, @RequestParam String phone, @RequestParam String name) {
+        User user = userRepository.findOne(id);
+        if (instructor) {
+            user.setInstructor(true);
         }
+        if (admin) {
+            user.setAdmin(true);
+        }
+        if (!user.getPhone().equals(phone)) {
+            user.setPhone(phone);
+        }
+        if (!user.getName().equals(name)) {
+            user.setName(name);
+        }
+
         userRepository.save(user);
         return "redirect:/user/all";
 
+    }
+
+    @RequestMapping(value = "/resetpassword/{id}", produces = "text/html; charset=utf-8", method = RequestMethod.GET)
+    public String reset(@PathVariable Long id, Model model) {
+        User user = userRepository.findOne(id);
+        model.addAttribute("user", user);
+        return "/user/resetpassword";
     }
 
 
