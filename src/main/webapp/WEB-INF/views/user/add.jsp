@@ -31,42 +31,51 @@
         <div class="row">
             <div class="mx-auto">
                 <form:form modelAttribute="user" method="post">
-                    <div class="form-group row flex-nowrap margin100">
+                    <div class="form-group row">
                         <label class="control-label col-sm-5">Imię i nazwisko:</label>
-                        <div class="col-sm-10">
+                        <div class="col-sm-7">
                             <form:input path="name" type="text" class="form-control"/>
+                            <small><form:errors path="name" cssClass="error col-sm-offset-5 col-sm-12"
+                                                element="div"/></small>
                         </div>
-                        <form:errors path="name" cssClass="error col-sm-offset-9 col-sm-10" element="div"/>
+
                     </div>
-                    <div class="form-group row flex-nowrap margin100">
+
+                    <div class="form-group row">
                         <label class="control-label col-sm-5">Email:</label>
-                        <div class="col-sm-10">
+                        <div class="col-sm-7">
                             <form:input path="email" type="email" class="form-control"/>
+                            <small><form:errors path="email" cssClass="error col-sm-offset-9 col-sm-10"
+                                                element="div"/></small>
                         </div>
-                        <form:errors path="email" cssClass="error col-sm-offset-9 col-sm-10" element="div"/>
+
                     </div>
-                    <div class="form-group row flex-nowrap margin100">
+                    <div class="form-group row">
                         <label class="control-label col-sm-5">Hasło:</label>
-                        <div class="col-sm-10">
+                        <div class="col-sm-7">
                             <form:input path="password" type="password" class="form-control"/>
+                            <small><form:errors path="password" cssClass="error col-sm-offset-9 col-sm-10"
+                                                element="div"/></small>
                         </div>
-                        <form:errors path="password" cssClass="error col-sm-offset-9 col-sm-10" element="div"/>
+
                     </div>
-                    <div class="form-group row flex-nowrap margin100">
+                    <div class="form-group row">
                         <label class="control-label col-sm-5">Powtórz hasło:</label>
-                        <div class="col-sm-10">
+                        <div class="col-sm-7">
                             <input type="password" class="form-control" name="repeatPassword"/>
                         </div>
 
                     </div>
-                    <div class="form-group row flex-nowrap margin100">
+                    <div class="form-group row">
                         <label class="control-label col-sm-5">Numer telefonu:</label>
-                        <div class="col-sm-10">
+                        <div class="col-sm-7">
                             <form:input path="phone" type="text" class="form-control"/>
+                            <small><form:errors path="phone" cssClass="error col-sm-offset-9 col-sm-10"
+                                                element="div"/></small>
                         </div>
-                        <form:errors path="phone" cssClass="error col-sm-offset-9 col-sm-10" element="div"/>
+
                     </div>
-                    <div class="row flex-nowrap">
+                    <div class="row">
                         <div class="mx-auto">
                             <input type="submit" class="myButton" value="ZAREJESTRUJ"/>
                         </div>
