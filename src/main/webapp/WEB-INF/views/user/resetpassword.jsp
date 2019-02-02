@@ -40,6 +40,14 @@
                 <div class="col-sm-7">
                     <input type="password" class="form-control" name="repeatPassword"/>
                 </div>
+                <br>
+            </div>
+            <div class="form-group row flex-nowrap ">
+                <label class="control-label col-sm-5"></label>
+                <div class="col-sm-7">
+                    <small class="error">${error}</small>
+                </div>
+                <br>
             </div>
             <div class="row flex-nowrap">
                 <div class="mx-auto">

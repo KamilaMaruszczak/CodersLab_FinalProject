@@ -179,14 +179,12 @@ public class UserController {
     }
 
     @RequestMapping(value = "/edit/{id}", produces = "text/html; charset=utf-8", method = RequestMethod.POST)
-    public String update(@PathVariable Long id, @RequestParam Boolean instructor, @RequestParam Boolean admin, @RequestParam String phone, @RequestParam String name) {
+    public String update(@PathVariable Long id, @RequestParam(defaultValue = "false") Boolean instructor, @RequestParam(defaultValue = "false") Boolean admin, @RequestParam String phone, @RequestParam String name) {
         User user = userRepository.findOne(id);
-        if (instructor) {
-            user.setInstructor(true);
-        }
-        if (admin) {
-            user.setAdmin(true);
-        }
+
+        user.setInstructor(instructor);
+        user.setAdmin(admin);
+
         if (!user.getPhone().equals(phone)) {
             user.setPhone(phone);
         }
@@ -205,6 +203,25 @@ public class UserController {
         model.addAttribute("user", user);
         return "/user/resetpassword";
     }
+
+    @RequestMapping(value = "/resetpassword/{id}", produces = "text/html; charset=utf-8", method = RequestMethod.POST)
+    public String reset(@PathVariable Long id, @RequestParam String password, @RequestParam String repeatPassword, Model model) {
+        User user = userRepository.findOne(id);
+        if (!password.equals(repeatPassword)) {
+            model.addAttribute("error", "hasła się nie zgadzają");
+            model.addAttribute("user", user);
+            return "/user/resetpassword";
+        } else if (password.isEmpty() || repeatPassword.isEmpty()) {
+            model.addAttribute("error", "pola nie mogą być puste");
+            model.addAttribute("user", user);
+            return "/user/resetpassword";
+        }
+
+        user.setPassword(password);
+        userService.save(user);
+        return "redirect: /user/all";
+    }
+
 
 
     @RequestMapping(value = "/delete/{id}", produces = "text/html; charset=utf-8")
