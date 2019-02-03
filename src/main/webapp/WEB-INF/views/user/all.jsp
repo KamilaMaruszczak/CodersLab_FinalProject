@@ -21,7 +21,7 @@
 
 <div class="border box">
     <div class="my-4">
-        <table class="table table-striped text-center">
+        <table class="table table-striped text-center" id="users">
             <thead>
             <tr>
                 <th scope="row" colspan="7"><h3>Lista zarejestrowanych użytkowników</h3></th>
@@ -57,7 +57,10 @@
 
                         <c:if test="${admin}">
                     <td class="align-middle">
-                        <a href="<c:url value = "/user/delete/${user.id}"/>">USUŃ</a>
+                        <a class="trigger" href="">USUŃ</a>
+                        <span class="hide tooltiptext">Tej operacji nie można cofnąć.<br><span class="triggerhide">ZREZYGNUJ</span> &nbsp; &nbsp; <a
+                                id="a_red" href="<c:url value = "/user/delete/${user.id}"/>">USUŃ</a></span>
+
                     </td>
                     <td class="align-middle">
                         <a href="<c:url value = "/user/edit/${user.id}"/>">EDYTUJ</a>
@@ -72,7 +75,28 @@
         </table>
     </div>
 </div>
-</body>
 
+
+<script type="text/javascript">
+    var users = $('#users');
+    users.find("a.trigger").bind("click", function (event) {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        $(this).next("span.tooltiptext")
+            .toggleClass("hide");
+
+    })
+
+    users.find("span.triggerhide").bind("click", function (event) {
+        event.preventDefault();
+        $(this).parent()
+            .toggleClass("hide");
+
+    })
+
+
+</script>
+
+</body>
 <%@ include file="/WEB-INF/views/footer.jsp" %>
 </html>

@@ -27,7 +27,7 @@
 
 <div class="border box">
     <div class="text-center"><p>Moje zapisy:</p><br></div>
-    <table class="table table-striped">
+    <table class="table table-striped" id="sailors">
         <thead>
         <tr></tr>
         <tr>
@@ -36,6 +36,7 @@
             <th class="align-middle">Data zakończenia</th>
             <th class="align-middle">Klasa</th>
             <th class="align-middle">Instruktor</th>
+            <th class="align-middle">Data Zapisu</th>
             <th class="align-middle">Usuń Zapis</th>
         </tr>
         </thead>
@@ -49,13 +50,39 @@
                                                          pattern='dd-MM-yyyy'/></td>
                 <td class="align-middle">${sailorCourse.course.type}</td>
                 <td class="align-middle">${sailorCourse.course.instructor.name}</td>
-                <td class="align-middle"><a href="<c:url value = "/sailor/delete/${sailorCourse.id}"/>">USUŃ</a></td>
-                </tr>
+                <td class="align-middle"><fmt:formatDate value='${sailorCourse.entryDate}'
+                                                         pattern='dd-MM-yyyy'/></td>
+                <td class="align-middle">
+                    <a class="trigger" href="">USUŃ</a>
+                    <span class="hide tooltiptext">Tej operacji nie można cofnąć.<br><span
+                            class="triggerhide">ZREZYGNUJ</span> &nbsp; &nbsp; <a
+                            id="a_red" href="<c:url value = "/sailor/delete/${sailorCourse.id}"/>">USUŃ</a></span>
+
+            </tr>
         </c:forEach>
         </tbody>
     </table>
 </div>
 
+<script type="text/javascript">
+    var sailors = $('#sailors');
+    sailors.find("a.trigger").bind("click", function (event) {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        $(this).next("span.tooltiptext")
+            .toggleClass("hide");
+
+    })
+
+    sailors.find("span.triggerhide").bind("click", function (event) {
+        event.preventDefault();
+        $(this).parent()
+            .toggleClass("hide");
+
+    })
+
+
+</script>
 </body>
 <%@ include file="/WEB-INF/views/footer.jsp" %>
 </html>

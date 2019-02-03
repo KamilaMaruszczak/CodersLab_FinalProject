@@ -535,3 +535,38 @@ a.article:hover {
     padding-left: 0px;
     padding-right: 0px;
 }
+
+/*TOOLTIP*/
+.tooltip {
+    position: relative;
+
+}
+
+.tooltiptext {
+    /*visibility: hidden;*/
+    width: 250px;
+    background-color: #f9bdbd;
+    color: darkred;
+    text-align: center;
+    border-radius: 6px;
+    border-style: dashed;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    /*margin-left: -60px;*/
+}
+
+.tooltiptext:after, .tooltiptext:before {
+    border-bottom: 25px dashed transparent;
+    border-right: 25px dashed #f9bdbd;
+    left: -25px;
+    top: 0px;
+    content: '';
+    position: absolute;
+    /*right: 0px;*/
+}
+
+#a_red {
+    color: darkred;
+    font-weight: bolder;
+}

@@ -58,7 +58,13 @@
                         <c:if test="${admin}">
                             <td class="align-middle"><a href="<c:url value = "/course/edit/${item.id}"/>">EDYTUJ</a>
                             </td>
-                            <td class="align-middle"><a href="<c:url value = "/course/delete/${item.id}"/>">USUŃ</a>
+                            <td class="align-middle">
+
+                                <a class="trigger" href="">USUŃ</a>
+                                <span class="hide tooltiptext">Tej operacji nie można cofnąć. Spowoduje ona usunięcie kursu i zapisanych kursantów.<br><span
+                                        class="triggerhide">ZREZYGNUJ</span> &nbsp; &nbsp; <a id="a_red"
+                                                                                              href="<c:url value = "/course/delete/${item.id}"/>">USUŃ</a></span>
+
                             </td>
                         </c:if>
 
@@ -127,7 +133,13 @@
                                                     </form>
                                                 </td>
                                                 <td class="align-middle">
-                                                    <a href="<c:url value = "/sailor/delete/${sailorCourse.id}"/>">USUŃ</a>
+
+                                                    <a class="trigger" href="<c:url value = "/"/>">USUŃ</a>
+                                                    <span class="hide tooltiptext">Tej operacji nie można cofnąć:<br><span
+                                                            class="triggerhide">ZREZYGNUJ</span> &nbsp; &nbsp; <a
+                                                            id="a_red"
+                                                            href="<c:url value = "/sailor/delete/${sailorCourse.id}"/>">USUŃ</a></span>
+
                                                 </td>
                                             </c:if>
 
@@ -164,12 +176,27 @@
     })
 
     var courses = $('#courses');
-    // var parentCard = courses.find("i.far fa-address-card");
     courses.on("click", "i.far.fa-address-card", function () {
         $(this).parent().parent().next("#parent")
             .toggle();
 
     })
+
+    courses.find("a.trigger").bind("click", function (event) {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        $(this).next("span.tooltiptext")
+            .toggleClass("hide");
+
+    })
+
+    courses.find("span.triggerhide").bind("click", function (event) {
+        event.preventDefault();
+        $(this).parent()
+            .toggleClass("hide");
+
+    })
+
 
 
 </script>
