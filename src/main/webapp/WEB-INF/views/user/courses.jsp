@@ -62,6 +62,45 @@
         </c:forEach>
         </tbody>
     </table>
+
+    <div class="mx-auto">
+        <div class="bluebox2">
+            <div class="text-center">
+
+                <h3 class=""><i class="fas fa-info-circle "></i> Ważne informacje:</h3>
+            </div>
+            <div class="text-justify bold">Po dokonaniu zapisu prosimy o wpłatę zaliczki w przeciągu <span
+                    class="darkblue">7 dni</span> w celu potwierdzenia chęci udziału w kursie.
+                Dopiero po otrzymaniu wpłaty rezerwacja zostanie potwierdzona. W przeciwnym wypadku zarezerwowane
+                miejsce zostanie zwolnione.
+            </div>
+            <br>
+            <div class="text-justify bold">
+                <table class="bold white">
+                    <tr>
+                        <td align="right">Kwota zaliczki:</td>
+                        <td><span class="darkblue">&nbsp; 200zł x ilość zarezerwowanych miejsc</span></td>
+                    </tr>
+                    <tr>
+                        <td align="right">Nr konta:</td>
+                        <td><span class="darkblue">&nbsp; 96 2030 0045 1110 0000 0348 2520</span></td>
+                    </tr>
+                    <tr>
+                        <td align="right">Odbiorca:</td>
+                        <td><span class="darkblue">&nbsp; Lubelska Grupa Regatowa</span></td>
+                    </tr>
+                    <tr>
+                        <td align="right">Tytułem:</td>
+                        <td><span class="darkblue">&nbsp; Imię i Nazwisko/a uczestnika kursu</span></td>
+                    </tr>
+                </table>
+                <br>
+                <div class="text-justify bold">Pozostałą kwotę 500zł należy wpłacić na 7 dni przed datą rozpoczęcia
+                    kursu.
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <script type="text/javascript">

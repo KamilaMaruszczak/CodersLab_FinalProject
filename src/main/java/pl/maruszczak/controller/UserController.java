@@ -161,7 +161,7 @@ public class UserController {
             model.addAttribute("course", course);
         }
 
-        return "redirect:/";
+        return "redirect:/user/courses";
     }
 
     @RequestMapping(value = "/all", produces = "text/html; charset=utf-8")

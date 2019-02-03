@@ -40,6 +40,7 @@
                     dfsdkfjslnvx
                     sdlvjklvm
                     dxlnvvfclnfpbojfb;f[so
+                    <div class="text-center margin-top"><a href="/" class="myButton">ZOBACZ TERMINY</a></div>
                 </div>
             </div>
             <div class="mx-auto my-4">
@@ -53,6 +54,7 @@
                         spełniających przepisy klasy Moth, dlatego była początkowo znana jako "Moth-Europe".
                         Konstruktor: Alois Roland (Belgia). W latach 1992-2004 klasa olimpijska dla kobiet.
 
+                        <div class="text-center margin-top"><a href="/" class="myButton">ZOBACZ TERMINY</a></div>
 
                     </div>
                 </div>
