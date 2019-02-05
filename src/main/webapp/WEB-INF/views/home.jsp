@@ -67,7 +67,7 @@
 
                             <td class="align-middle">
 
-                                <c:if test="${(item.numberOfBoats-item.sailors.size())>0}">
+                                <c:if test="${(item.numberOfBoats-item.sailors.size())>0 && item.endDate>now}">
 
                                     <a href="<c:url value = "/user/course/${item.id}"/>">ZAPISY</a>
 

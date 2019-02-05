@@ -233,10 +233,13 @@ public class UserController {
     @RequestMapping(value = "/courses", produces = "text/html; charset=utf-8")
     public String courses(@SessionAttribute String email, Model model) {
         User user = userRepository.findUserByEmail(email);
+        Date date = new Date();
+        date.setDate(1);
+        date.setMonth(0);
         List<Sailor> sailors = user.getSailors();
         List<SailorCourse> list = new ArrayList<>();
         for (Sailor sailor : sailors) {
-            list.addAll(sailorCourseRepository.findAllBySailor(sailor));
+            list.addAll(sailorCourseRepository.queryFindBySailorOrdered(sailor, date));
         }
         model.addAttribute("sailorCourseList", list);
         return "/user/courses";

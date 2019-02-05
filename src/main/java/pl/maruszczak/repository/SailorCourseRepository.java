@@ -6,6 +6,7 @@ import pl.maruszczak.model.Course;
 import pl.maruszczak.model.Sailor;
 import pl.maruszczak.model.SailorCourse;
 
+import java.util.Date;
 import java.util.List;
 
 public interface SailorCourseRepository extends JpaRepository<SailorCourse, Long> {
@@ -23,4 +24,9 @@ public interface SailorCourseRepository extends JpaRepository<SailorCourse, Long
 
     @Query("select sc from SailorCourse sc where sc.sailor=?1 and sc.course=?2")
     SailorCourse queryFindBySailorAndCourse(Sailor sailor, Course course);
+
+    @Query("select sc from SailorCourse sc where sc.sailor=?1 and sc.course.startDate>?2 order by sc.course.startDate")
+    List<SailorCourse> queryFindBySailorOrdered(Sailor sailor, Date date);
+
+
 }

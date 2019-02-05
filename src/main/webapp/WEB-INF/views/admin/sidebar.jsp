@@ -94,10 +94,10 @@
                 <a class="nav-link" href="/course/all">Kursy</a>
             </li>
             <li>
-                <a class="nav-link" href="/user/all">Users</a>
+                <a class="nav-link" href="/user/all">Użytk</a>
             </li>
             <li>
-                <a class="nav-link" href="/course/history">Historia</a>
+                <a class="nav-link" href="/course/history">Hist</a>
             </li>
             <li>
                 <a class="nav-link" href="/course/add"><h5><i class="fa fa-plus-circle"></i></h5></a>

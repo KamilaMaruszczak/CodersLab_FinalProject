@@ -10,7 +10,7 @@ import java.util.List;
 
 public interface CourseRepository extends JpaRepository<Course, Long> {
 
-    List<Course> findAllByOrderByStartDate();
+    List<Course> findAllByOrderByStartDateDesc();
 
     @Query(value = "select * from courses where YEAR(startDate)=?1 order by startDate", nativeQuery = true)
     List<Course> queryfindAllByYear(int year);

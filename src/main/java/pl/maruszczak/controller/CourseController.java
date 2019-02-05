@@ -123,7 +123,7 @@ public class CourseController {
     @RequestMapping(value = "/history", produces = "text/html; charset=utf-8")
     public String history(Model model) {
 
-        List<Course> courses = courseRepository.findAllByOrderByStartDate();
+        List<Course> courses = courseRepository.findAllByOrderByStartDateDesc();
         model.addAttribute("courses", courses);
 
         return "/course/history";

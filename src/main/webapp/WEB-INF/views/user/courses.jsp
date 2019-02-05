@@ -14,7 +14,8 @@
 <html>
 <%@ include file="/WEB-INF/views/head.jsp" %>
 <%@ include file="/WEB-INF/views/header.jsp" %>
-
+<jsp:useBean id="now" class="java.util.Date"/>
+<fmt:formatDate var="year" value="${now}" pattern="yyyy"/>
 <body>
 <c:choose>
     <c:when test="${instructor}">
@@ -26,7 +27,7 @@
 
 
 <div class="border box">
-    <div class="text-center"><p>Moje zapisy:</p><br></div>
+    <div class="text-center"><p>Moje zapisy ${year}:</p><br></div>
     <div class="table-responsive">
         <table class="table table-striped" id="sailors">
             <thead>

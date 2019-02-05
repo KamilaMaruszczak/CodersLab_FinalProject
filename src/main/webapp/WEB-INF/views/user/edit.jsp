@@ -66,6 +66,7 @@
                     </div>
                     <div class="row flex-nowrap">
                         <div class="mx-auto">
+                            <a href="/user/all" class="myButton">ANULUJ</a>
                             <input type="submit" class="myButton" value="ZAPISZ"/>
                         </div>
                     </div>
