@@ -27,29 +27,29 @@
 
 <div class="border box">
     <div class="text-center"><p>Zapisujesz na kurs:</p><br></div>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr></tr>
+            <tr>
+                <th class="align-middle">Data rozpoczęcia</th>
+                <th class="align-middle">Data zakończenia</th>
+                <th class="align-middle">Klasa</th>
+                <th class="align-middle">Instruktor</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td class="align-middle"><fmt:formatDate value='${course.startDate}' pattern='dd-MM-yyyy'/></td>
+                <td class="align-middle"><fmt:formatDate value='${course.endDate}' pattern='dd-MM-yyyy'/></td>
+                <td class="align-middle"> ${course.type}</td>
+                <td class="align-middle"> ${course.instructor.name}</td>
+            </tr>
 
-    <table class="table table-striped">
-        <thead>
-        <tr></tr>
-        <tr>
-            <th class="align-middle">Data rozpoczęcia</th>
-            <th class="align-middle">Data zakończenia</th>
-            <th class="align-middle">Klasa</th>
-            <th class="align-middle">Instruktor</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td class="align-middle"><fmt:formatDate value='${course.startDate}' pattern='dd-MM-yyyy'/></td>
-            <td class="align-middle"><fmt:formatDate value='${course.endDate}' pattern='dd-MM-yyyy'/></td>
-            <td class="align-middle"> ${course.type}</td>
-            <td class="align-middle"> ${course.instructor.name}</td>
-        </tr>
 
-
-        </tbody>
-    </table>
-
+            </tbody>
+        </table>
+    </div>
     <div class="row margin-top">
         <div class="mx-auto">
 

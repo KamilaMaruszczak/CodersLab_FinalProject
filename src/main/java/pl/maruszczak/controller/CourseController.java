@@ -106,5 +106,12 @@ public class CourseController {
         return "redirect:/course/all";
     }
 
+    @RequestMapping(value = "/print", produces = "text/html; charset=utf-8")
+    public String print(Model model) {
+        List<Course> courses = courseRepository.findAllByOrderByStartDate();
+        model.addAttribute("courses", courses);
+        return "/course/print";
+    }
+
 
 }

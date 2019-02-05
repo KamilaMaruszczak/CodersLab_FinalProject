@@ -104,8 +104,8 @@ margin-left {
     margin-bottom: 10%;
     padding-top: 3%;
     padding-bottom: 3%;
-    padding-left: 5%;
-    padding-right: 5%;
+    padding-left: 4%;
+    padding-right: 4%;
     height: auto;
     width: auto;
     max-width: 900px;
@@ -116,6 +116,9 @@ margin-left {
     background: var(--background-color);
 }
 
+.page-header-admin {
+    background: #6d7fcc;
+}
 .nav-link {
     color: var(--link-color);
     font-size: 16px;
@@ -495,10 +498,7 @@ a.article:hover {
     font-weight: 500;
 }
 
-/*BUTTON inside table*/
-.width60 {
-    width: 60px;
-}
+
 
 .width10 {
     width: 10px;
@@ -583,4 +583,47 @@ a.article:hover {
 
 .darkblue {
     color: #01024A;
+}
+
+/*BUTTON inside table*/
+#input {
+    width: 60px;
+}
+
+@media screen and (max-width: 480px) {
+
+    .table {
+        font-size: 10px;
+
+    }
+
+    .table tr, .table td, .table table tr {
+        padding: 3px;
+    }
+
+    .ismall {
+        font-size: 8px;
+    }
+
+    #input {
+        width: 40px;
+        height: 20px;
+        font-size: 10px;
+        text-align: center;
+    }
+
+    #button {
+        width: 20px;
+        height: 20px;
+        font-size: 8px;
+        text-align: center;
+    }
+
+    h3 {
+        font-size: 16px;
+    }
+
+    .box {
+        display: inherit;
+    }
 }

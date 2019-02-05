@@ -15,59 +15,70 @@
 <%@ include file="/WEB-INF/views/head.jsp" %>
 <%@ include file="/WEB-INF/views/header.jsp" %>
 
+
 <body>
-<c:choose>
-    <c:when test="${instructor}">
 
-        <%@ include file="/WEB-INF/views/admin/sidebar.jsp" %>
+<c:if test="${instructor}">
+    <%@ include file="/WEB-INF/views/admin/sidebar.jsp" %>
+</c:if>
 
-    </c:when>
-</c:choose>
 
 
     <div class="border box">
         <div class="row">
             <div class="mx-auto my-4">
-                <img src="/fragments/images/kalendar.png">
+                <img class="img-fluid" alt="Responsive image" src="/fragments/images/kalendar.png">
             </div>
         </div>
         <div class="my-4">
-            <table class="table table-striped text-center">
-                <thead>
-                <tr>
-                    <th scope="row" colspan="6"><h3>Lista kursów żeglarskich 2019</h3></th>
-                </tr>
-                <tr>
-                    <th class="align-middle">Data rozpoczęcia</th>
-                    <th class="align-middle">Data zakończenia</th>
-                    <th class="align-middle">Klasa</th>
-                    <th class="align-middle">Instruktor</th>
-                    <th class="align-middle">Ilość wolnych miejsc</th>
-                    <th class="align-middle">Zapisy</th>
-                </tr>
-                </thead>
-                <tbody>
-                <c:forEach items="${courses}" var="item">
+            <div class="table-responsive">
+                <table class="table table-striped text-center">
+                    <thead>
                     <tr>
-                        <td class="align-middle"><fmt:formatDate value='${item.startDate}' pattern='dd-MM-yyyy'/></td>
-                        <td class="align-middle"><fmt:formatDate value='${item.endDate}' pattern='dd-MM-yyyy'/></td>
-                        <td class="align-middle"> ${item.type}</td>
-                        <td class="align-middle"> ${item.instructor.name}</td>
-                        <td class="align-middle"> ${item.numberOfBoats-item.sailors.size()}</td>
-                        <td class="align-middle">
-                            <c:choose>
-                                <c:when test="${(item.numberOfBoats-item.sailors.size())!=0}">
+                        <th scope="row" colspan="6"><h3>Lista kursów żeglarskich 2019</h3></th>
+                    </tr>
+                    <tr>
+                        <th class="align-middle">Data rozpoczęcia</th>
+                        <th class="align-middle">Data zakończenia</th>
+                        <th class="align-middle">Klasa</th>
+                        <th class="align-middle">Instruktor</th>
+                        <th class="align-middle">Ilość wolnych miejsc</th>
+                        <th class="align-middle">Zapisy</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <c:forEach items="${courses}" var="item">
+                        <tr>
+                            <td class="align-middle"><fmt:formatDate value='${item.startDate}'
+                                                                     pattern='dd-MM-yyyy'/></td>
+                            <td class="align-middle"><fmt:formatDate value='${item.endDate}' pattern='dd-MM-yyyy'/></td>
+                            <td class="align-middle"> ${item.type}</td>
+                            <td class="align-middle"> ${item.instructor.name}</td>
+                            <td class="align-middle">
+                                <c:choose>
+                                <c:when test="${item.numberOfBoats-item.sailors.size()<0}">
+                                    0
+                                </c:when>
+                                <c:otherwise>
+                                    ${item.numberOfBoats-item.sailors.size()}</td>
+                            </c:otherwise>
+                            </c:choose>
+
+                            <td class="align-middle">
+
+                                <c:if test="${(item.numberOfBoats-item.sailors.size())>0}">
 
                                     <a href="<c:url value = "/user/course/${item.id}"/>">ZAPISY</a>
 
-                                </c:when>
-                            </c:choose>
-                        </td>
-                    </tr>
-                </c:forEach>
+                                </c:if>
 
-                </tbody>
-            </table>
+                            </td>
+                        </tr>
+                    </c:forEach>
+
+                    </tbody>
+                </table>
+            </div>
         </div>
 
 

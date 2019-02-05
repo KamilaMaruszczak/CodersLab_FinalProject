@@ -46,6 +46,12 @@ public class HomeController {
         return "/contact";
     }
 
+    @RequestMapping(value = "/faq", produces = "text/html; charset=utf-8")
+    public String faq() {
+
+        return "/faq";
+    }
+
     @RequestMapping(value = "/regulamin", produces = "text/html; charset=utf-8")
     public String regulamin(Model model) {
 

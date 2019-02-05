@@ -1,5 +1,7 @@
-<!-- Sidebar -->
-<div class="margin-top float-left">
+<!-- Sidebar when wide screen-->
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8" %>
+<div class="margin-top float-left d-none d-md-block">
     <div class="d-block float-left margin-top" id="div">
     <nav id="sidebar" class="z">
         <div class="sidebar-header" id="sidebarCollapse">
@@ -34,7 +36,7 @@
             <li>
                 <a href="/user/all" class="white">
                     <i class="fas fa-users"></i>
-                    Uzytkownicy
+                    Użytkownicy
                 </a>
             </li>
             <li>
@@ -44,12 +46,6 @@
 
         </ul>
 
-        <%--<ul class="list-unstyled CTAs">--%>
-        <%--<li class="active">--%>
-        <%--<a href="/course/add" class="download"><i class="fa fa-plus-circle"></i> DODAJ KURS</a>--%>
-
-        <%--</li>--%>
-        <%--</ul>--%>
 
     </nav>
 </div>
@@ -83,3 +79,21 @@
 
 </script>
 
+<!-- Sidebar when phone screen-->
+<div class="page-header-admin d-md-none">
+    <nav class="navbar navbar-expand-lg justify-content-around">
+
+        <ul class="nav text-uppercase">
+            <li class="nav-item active">
+                <a class="nav-link" href="/course/all">Kursy</a>
+            </li>
+            <li>
+                <a class="nav-link" href="/user/all">Użytkownicy</a>
+            </li>
+            <li>
+                <a class="nav-link" href="/course/add"><h5><i class="fa fa-plus-circle"></i></h5></a>
+            </li>
+        </ul>
+
+    </nav>
+</div>

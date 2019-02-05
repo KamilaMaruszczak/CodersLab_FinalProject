@@ -21,58 +21,60 @@
 
 <div class="border box">
     <div class="my-4">
-        <table class="table table-striped text-center" id="users">
-            <thead>
-            <tr>
-                <th scope="row" colspan="7"><h3>Lista zarejestrowanych użytkowników</h3></th>
-            </tr>
-            <tr>
-                <th class="align-middle"></th>
-                <th class="align-middle">Imię i Nazwisko</th>
-                <th class="align-middle">Email</th>
-                <th class="align-middle">Telefon</th>
-                <th class="align-middle">Instruktor</th>
-
-                <c:if test="${admin}">
-                    <th class="align-middle">Usuń</th>
-                    <th class="align-middle">Edytuj</th>
-                </c:if>
-
-
-            </tr>
-            </thead>
-            <tbody>
-            <c:forEach items="${users}" var="user" varStatus="i">
+        <div class="table-responsive">
+            <table class="table table-striped text-center" id="users">
+                <thead>
                 <tr>
-                    <td class="align-middle">${i.index+1}</td>
-                    <td class="align-middle">${user.name}</td>
-                    <td class="align-middle"> ${user.email}</td>
-                    <td class="align-middle"> ${user.phone}</td>
-                    <td class="align-middle">
+                    <th scope="row" colspan="7"><h3>Lista zarejestrowanych użytkowników</h3></th>
+                </tr>
+                <tr>
+                    <th class="align-middle"></th>
+                    <th class="align-middle">Imię i Nazwisko</th>
+                    <th class="align-middle">Email</th>
+                    <th class="align-middle">Telefon</th>
+                    <th class="align-middle">Instruktor</th>
 
-                        <c:if test="${user.instructor}">
-                        INSTRUKTOR
-                        </c:if>
-
-
-                        <c:if test="${admin}">
-                    <td class="align-middle">
-                        <a class="trigger" href="">USUŃ</a>
-                        <span class="hide tooltiptext">Tej operacji nie można cofnąć.<br><span class="triggerhide">ZREZYGNUJ</span> &nbsp; &nbsp; <a
-                                id="a_red" href="<c:url value = "/user/delete/${user.id}"/>">USUŃ</a></span>
-
-                    </td>
-                    <td class="align-middle">
-                        <a href="<c:url value = "/user/edit/${user.id}"/>">EDYTUJ</a>
-                    </td>
+                    <c:if test="${admin}">
+                        <th class="align-middle">Usuń</th>
+                        <th class="align-middle">Edytuj</th>
                     </c:if>
 
 
                 </tr>
-            </c:forEach>
+                </thead>
+                <tbody>
+                <c:forEach items="${users}" var="user" varStatus="i">
+                    <tr>
+                        <td class="align-middle">${i.index+1}</td>
+                        <td class="align-middle">${user.name}</td>
+                        <td class="align-middle"> ${user.email}</td>
+                        <td class="align-middle"> ${user.phone}</td>
+                        <td class="align-middle">
 
-            </tbody>
-        </table>
+                            <c:if test="${user.instructor}">
+                            INSTRUKTOR
+                            </c:if>
+
+
+                            <c:if test="${admin}">
+                        <td class="align-middle">
+                            <a class="trigger" href="">USUŃ</a>
+                            <span class="hide tooltiptext">Tej operacji nie można cofnąć.<br><span class="triggerhide">NIE USUWAJ</span> &nbsp; &nbsp; <a
+                                    id="a_red" href="<c:url value = "/user/delete/${user.id}"/>">USUŃ</a></span>
+
+                        </td>
+                        <td class="align-middle">
+                            <a href="<c:url value = "/user/edit/${user.id}"/>">EDYTUJ</a>
+                        </td>
+                        </c:if>
+
+
+                    </tr>
+                </c:forEach>
+
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
 
