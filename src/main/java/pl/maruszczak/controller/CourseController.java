@@ -19,7 +19,11 @@ import pl.maruszczak.repository.UserRepository;
 
 
 import javax.validation.Valid;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -53,7 +57,6 @@ public class CourseController {
     }
 
 
-
     @RequestMapping(value = "/add", produces = "text/html; charset=utf-8", method = RequestMethod.GET)
     public String add(Model model) {
         model.addAttribute("course", new Course());
@@ -75,8 +78,10 @@ public class CourseController {
 
     @RequestMapping(value = "/all", produces = "text/html; charset=utf-8")
     public String all(Model model) {
-        List<Course> courses = courseRepository.findAllByOrderByStartDate();
+        int year = Calendar.getInstance().get(Calendar.YEAR);
+        List<Course> courses = courseRepository.queryfindAllByYear(year);
         model.addAttribute("courses", courses);
+
         return "/course/all";
     }
 
@@ -108,10 +113,20 @@ public class CourseController {
 
     @RequestMapping(value = "/print", produces = "text/html; charset=utf-8")
     public String print(Model model) {
-        List<Course> courses = courseRepository.findAllByOrderByStartDate();
+
+        int year = Calendar.getInstance().get(Calendar.YEAR);
+        List<Course> courses = courseRepository.queryfindAllByYear(year);
         model.addAttribute("courses", courses);
         return "/course/print";
     }
 
+    @RequestMapping(value = "/history", produces = "text/html; charset=utf-8")
+    public String history(Model model) {
+
+        List<Course> courses = courseRepository.findAllByOrderByStartDate();
+        model.addAttribute("courses", courses);
+
+        return "/course/history";
+    }
 
 }

@@ -14,7 +14,8 @@
 <html>
 <%@ include file="/WEB-INF/views/head.jsp" %>
 <%@ include file="/WEB-INF/views/header.jsp" %>
-
+<jsp:useBean id="now" class="java.util.Date"/>
+<fmt:formatDate var="year" value="${now}" pattern="yyyy"/>
 
 <body>
 
@@ -35,7 +36,7 @@
                 <table class="table table-striped text-center">
                     <thead>
                     <tr>
-                        <th scope="row" colspan="6"><h3>Lista kursów żeglarskich 2019</h3></th>
+                        <th scope="row" colspan="6"><h3>Lista kursów żeglarskich ${year}</h3></th>
                     </tr>
                     <tr>
                         <th class="align-middle">Data rozpoczęcia</th>

@@ -19,22 +19,13 @@
 
 
     <div class="border box">
-        <div class="row">
-            <div class="mx-auto my-4">
-                <img class="img-fluid" alt="Responsive image" src="/fragments/images/kalendar.png">
-            </div>
-            <div>
-                <a class="d-none d-md-block" href="<c:url value = "/course/print"/>" rel="noopener noreferrer"
-                   target="_blank"><h5><i class="fa fa-print"></i></h5></a>
 
-            </div>
-        </div>
         <div class="my-4">
             <div class="table-responsive">
                 <table id="courses" class="table table-fixed w-100 d-block d-md-table text-center align-middle">
                     <thead>
                     <tr>
-                        <th scope="row" colspan="7" class="align-middle"><h3>Lista kursów żeglarskich ${year}</h3></th>
+                        <th scope="row" colspan="7" class="align-middle"><h3>Historia kursów żeglarskich</h3></th>
                     </tr>
                     <tr>
                         <th class="align-middle">Data rozpoczęcia</th>
@@ -43,17 +34,13 @@
                         <th class="align-middle">Instruktor</th>
                         <th class="align-middle">Ilość zapisów</th>
 
-                        <c:if test="${admin}">
-                            <th class="align-middle">Edytuj</th>
-                            <th class="align-middle">Usuń</th>
-                        </c:if>
-
                     </tr>
                     </thead>
                     <tbody>
                     <c:forEach items="${courses}" var="item" varStatus="i">
-                        <tr data-toggle="collapse" data-target="#${i.index}"
-                            class="table-active font-weight-bold accordion-toggle ">
+                        <%--<tr data-toggle="collapse" data-target="#${i.index}"--%>
+                        <%--class="table-active font-weight-bold accordion-toggle ">--%>
+                        <tr data-toggle="collapse" data-target="#${i.index}" class="accordion-toggle bold">
                             <td class="align-middle"><fmt:formatDate value='${item.startDate}'
                                                                      pattern='dd-MM-yyyy'/></td>
                             <td class="align-middle"><fmt:formatDate value='${item.endDate}' pattern='dd-MM-yyyy'/></td>
@@ -61,25 +48,12 @@
                             <td class="align-middle"> ${item.instructor.name}</td>
                             <td class="align-middle"> ${item.sailors.size()}</td>
 
-                            <c:if test="${admin}">
-                                <td class="align-middle"><a href="<c:url value = "/course/edit/${item.id}"/>">EDYTUJ</a>
-                                </td>
-                                <td class="align-middle">
-
-                                    <a class="trigger" href="">USUŃ</a>
-                                    <span class="hide tooltiptext">Tej operacji nie można cofnąć. Spowoduje ona usunięcie kursu i zapisanych kursantów.<br><span
-                                            class="triggerhide">NIE USUWAJ</span> &nbsp; &nbsp; <a id="a_red"
-                                                                                                   href="<c:url value = "/course/delete/${item.id}"/>">USUŃ</a></span>
-
-                                </td>
-                            </c:if>
-
 
                         </tr>
                         <tr>
                             <td colspan="7" class="hiddenRow">
-                                <div data-role="collapsible" class="mx-auto width-inherit" id="${i.index}"
-                                     data-collapsed="false">
+                                    <%--<div data-role="collapsible" class="mx-auto width-inherit" id="${i.index}" data-collapsed="true">--%>
+                                <div class="accordian-body collapse mx-auto" id="${i.index}">
                                     <div class="table-responsive">
                                         <table class="table width-inherit" id="sailors">
                                             <tr class="table-active">
@@ -90,13 +64,6 @@
                                                 <td class="align-middle">Rodzic</td>
                                                 <td class="align-middle">Potwierdzony</td>
                                                 <td class="align-middle text-center">Wpłata</td>
-                                                <c:if test="${admin}">
-                                                    <td class="align-middle">
-                                                        <span class="d-none d-md-block">Zapisz&nbsp;wpł.</span>
-                                                        <span class="d-md-none">Zapisz&nbsp;wpłatę</span>
-                                                    </td>
-                                                    <td class="align-middle">Usuń</td>
-                                                </c:if>
 
 
                                             </tr>
@@ -120,45 +87,10 @@
                                                             <c:when test="${sailorCourse.confirmed}">
                                                                 <span class="bold">POTWIERDZONY </span>
                                                             </c:when>
-                                                            <c:otherwise>
 
-                                                                <c:if test="${admin}">
-                                                                    <a href="<c:url value = "/sailor/confirm/${sailorCourse.id}"/>">POTWIERDŹ</a>
-                                                                </c:if>
-
-                                                            </c:otherwise>
                                                         </c:choose></td>
                                                     <td class="align-middle text-center">
                                                         <span class="bold">${sailorCourse.paid}</span></td>
-
-
-                                                    <c:if test="${admin}">
-                                                        <td class="align-middle text-center">
-                                                            <form method="post"
-                                                                  action="/sailor/payment/${sailorCourse.id}"
-                                                                  class="align-middle">
-                                                                    <%--<input type="hidden" name="sailorCourseId" value="${sailorCourse.id}">--%>
-                                                                <div class="row form-group align-middle zeromargin margin-top">
-                                                                    <input id="input" type="text" class="form-control"
-                                                                           name="paid">
-                                                                    <button id="button" type="submit"
-                                                                            class="myButton paddingLR"><i
-                                                                            class="far fa-check-square blue ismall"></i>
-                                                                    </button>
-                                                                        <%--<input type="submit" value="+"/>--%>
-                                                                </div>
-                                                            </form>
-                                                        </td>
-                                                        <td class="align-middle">
-
-                                                            <a class="trigger" href="<c:url value = "/"/>">USUŃ</a>
-                                                            <span class="hide tooltiptext">Tej operacji nie można cofnąć:<br><span
-                                                                    class="triggerhide">NIE USUWAJ</span> &nbsp; &nbsp; <a
-                                                                    id="a_red"
-                                                                    href="<c:url value = "/sailor/delete/${sailorCourse.id}"/>">USUŃ</a></span>
-
-                                                        </td>
-                                                    </c:if>
 
 
                                                 </tr>
@@ -188,10 +120,12 @@
 </section>
 
 <script type="text/javascript">
-    $('.accordion-toggle').on('bs.collapse', function () {
+
+    $('.accordian-body').on('show.bs.collapse', function () {
         $(this).closest("table")
-            .find(".collapsible")
-            .toggleClass("hide");
+            .find(".collapse.in")
+            .not(this)
+            .collapse('toggle')
     })
 
     var courses = $('#courses');

@@ -13,6 +13,10 @@ import pl.maruszczak.model.Course;
 import pl.maruszczak.repository.CourseRepository;
 
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 
@@ -24,7 +28,10 @@ public class HomeController {
 
     @ModelAttribute("courses")
     public List<Course> getCourses() {
-        return courseRepository.findAllByOrderByStartDate();
+        int year = Calendar.getInstance().get(Calendar.YEAR);
+        return courseRepository.queryfindAllByYear(year);
+
+
     }
 
 
