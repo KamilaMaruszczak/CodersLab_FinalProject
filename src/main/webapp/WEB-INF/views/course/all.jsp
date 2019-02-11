@@ -53,7 +53,7 @@
                     <tbody>
                     <c:forEach items="${courses}" var="item" varStatus="i">
                         <tr data-toggle="collapse" data-target="#${i.index}"
-                            class="table-active font-weight-bold accordion-toggle ">
+                            class="table-active font-weight-bold accordion-toggle">
                             <td class="align-middle"><fmt:formatDate value='${item.startDate}'
                                                                      pattern='dd-MM-yyyy'/></td>
                             <td class="align-middle"><fmt:formatDate value='${item.endDate}' pattern='dd-MM-yyyy'/></td>

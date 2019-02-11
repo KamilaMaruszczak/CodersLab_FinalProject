@@ -40,7 +40,7 @@
                     <c:forEach items="${courses}" var="item" varStatus="i">
                         <%--<tr data-toggle="collapse" data-target="#${i.index}"--%>
                         <%--class="table-active font-weight-bold accordion-toggle ">--%>
-                        <tr data-toggle="collapse" data-target="#${i.index}" class="accordion-toggle bold">
+                        <tr class="bold">
                             <td class="align-middle"><fmt:formatDate value='${item.startDate}'
                                                                      pattern='dd-MM-yyyy'/></td>
                             <td class="align-middle"><fmt:formatDate value='${item.endDate}' pattern='dd-MM-yyyy'/></td>
@@ -51,62 +51,62 @@
 
                         </tr>
                         <tr>
-                            <td colspan="7" class="hiddenRow">
+                            <td colspan="7" class="hide">
                                     <%--<div data-role="collapsible" class="mx-auto width-inherit" id="${i.index}" data-collapsed="true">--%>
-                                <div class="accordian-body collapse mx-auto" id="${i.index}">
-                                    <div class="table-responsive">
-                                        <table class="table width-inherit" id="sailors">
-                                            <tr class="table-active">
-                                                <td class="align-middle"></td>
-                                                <td class="align-middle">Kursant</td>
-                                                <td class="align-middle">Wiek</td>
-                                                <td class="align-middle">Zapis</td>
-                                                <td class="align-middle">Rodzic</td>
-                                                <td class="align-middle">Potwierdzony</td>
-                                                <td class="align-middle text-center">Wpłata</td>
+
+                                <div class="table-responsive">
+                                    <table class="table width-inherit" id="sailors">
+                                        <tr class="table-active">
+                                            <td class="align-middle"></td>
+                                            <td class="align-middle">Kursant</td>
+                                            <td class="align-middle">Wiek</td>
+                                            <td class="align-middle">Zapis</td>
+                                            <td class="align-middle">Rodzic</td>
+                                            <td class="align-middle">Potwierdzony</td>
+                                            <td class="align-middle text-center">Wpłata</td>
+
+
+                                        </tr>
+
+                                        <tbody>
+                                        <c:forEach items="${item.sailors}" var="sailorCourse" varStatus="j">
+                                            <tr class="">
+                                                <td class="align-middle pa">${j.index+1}</td>
+                                                <td class="align-middle">${sailorCourse.sailor.name}</td>
+                                                <td class="align-middle"><c:out
+                                                        value="${year - sailorCourse.sailor.yearOfBirth}"/> lat
+                                                </td>
+                                                <td class="align-middle"><fmt:formatDate
+                                                        value='${sailorCourse.entryDate}'
+                                                        pattern='dd-MM-yyyy'/></td>
+                                                <td class="align-middle text-center"><i
+                                                        class="far fa-address-card blue ismall"></i>
+                                                </td>
+                                                <td class="align-middle">
+                                                    <c:choose>
+                                                        <c:when test="${sailorCourse.confirmed}">
+                                                            <span class="bold">POTWIERDZONY </span>
+                                                        </c:when>
+
+                                                    </c:choose></td>
+                                                <td class="align-middle text-center">
+                                                    <span class="bold">${sailorCourse.paid}</span></td>
 
 
                                             </tr>
-
-                                            <tbody>
-                                            <c:forEach items="${item.sailors}" var="sailorCourse" varStatus="j">
-                                                <tr class="">
-                                                    <td class="align-middle pa">${j.index+1}</td>
-                                                    <td class="align-middle">${sailorCourse.sailor.name}</td>
-                                                    <td class="align-middle"><c:out
-                                                            value="${year - sailorCourse.sailor.yearOfBirth}"/> lat
-                                                    </td>
-                                                    <td class="align-middle"><fmt:formatDate
-                                                            value='${sailorCourse.entryDate}'
-                                                            pattern='dd-MM-yyyy'/></td>
-                                                    <td class="align-middle text-center"><i
-                                                            class="far fa-address-card blue ismall"></i>
-                                                    </td>
-                                                    <td class="align-middle">
-                                                        <c:choose>
-                                                            <c:when test="${sailorCourse.confirmed}">
-                                                                <span class="bold">POTWIERDZONY </span>
-                                                            </c:when>
-
-                                                        </c:choose></td>
-                                                    <td class="align-middle text-center">
-                                                        <span class="bold">${sailorCourse.paid}</span></td>
+                                            <tr class="hide table-info" id="parent">
+                                                <td colspan="9" class="text-center">
+                                                    Rodzic: ${sailorCourse.sailor.user.name} &nbsp;
+                                                    tel: ${sailorCourse.sailor.user.phone} &nbsp;
+                                                    email: ${sailorCourse.sailor.user.email}
+                                                </td>
+                                            </tr>
 
 
-                                                </tr>
-                                                <tr class="hide table-info" id="parent">
-                                                    <td colspan="9" class="text-center">
-                                                        Rodzic: ${sailorCourse.sailor.user.name} &nbsp;
-                                                        tel: ${sailorCourse.sailor.user.phone} &nbsp;
-                                                        email: ${sailorCourse.sailor.user.email}
-                                                    </td>
-                                                </tr>
+                                        </c:forEach>
+                                        </tbody>
+                                    </table>
 
-
-                                            </c:forEach>
-                                            </tbody>
-                                        </table>
-                                    </div>
                                 </div>
                             </td>
                         </tr>
@@ -121,11 +121,10 @@
 
 <script type="text/javascript">
 
-    $('.accordian-body').on('show.bs.collapse', function () {
-        $(this).closest("table")
-            .find(".collapse.in")
-            .not(this)
-            .collapse('toggle')
+    $('tr.bold').on('click', function () {
+        $(this).next()
+            .find("td.hide")
+            .toggle();
     })
 
     var courses = $('#courses');
