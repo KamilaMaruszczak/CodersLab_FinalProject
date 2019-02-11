@@ -52,8 +52,7 @@
                     </thead>
                     <tbody>
                     <c:forEach items="${courses}" var="item" varStatus="i">
-                        <tr data-toggle="collapse" data-target="#${i.index}"
-                            class="table-active font-weight-bold accordion-toggle">
+                        <tr class="table-active font-weight-bold accordion-toggle">
                             <td class="align-middle"><fmt:formatDate value='${item.startDate}'
                                                                      pattern='dd-MM-yyyy'/></td>
                             <td class="align-middle"><fmt:formatDate value='${item.endDate}' pattern='dd-MM-yyyy'/></td>
@@ -78,8 +77,7 @@
                         </tr>
                         <tr>
                             <td colspan="7" class="hiddenRow">
-                                <div data-role="collapsible" class="mx-auto width-inherit" id="${i.index}"
-                                     data-collapsed="false">
+
                                     <div class="table-responsive">
                                         <table class="table width-inherit" id="sailors">
                                             <tr class="table-active">
@@ -175,7 +173,7 @@
                                             </tbody>
                                         </table>
                                     </div>
-                                </div>
+
                             </td>
                         </tr>
                     </c:forEach>
@@ -188,9 +186,9 @@
 </section>
 
 <script type="text/javascript">
-    $('.accordion-toggle').on('bs.collapse', function () {
-        $(this).closest("table")
-            .find(".collapsible")
+    $('tr.accordion-toggle').on('click', function () {
+        $(this).next()
+            .find(".hiddenRow")
             .toggleClass("hide");
     })
 
