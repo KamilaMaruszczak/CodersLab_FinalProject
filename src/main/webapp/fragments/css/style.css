@@ -168,7 +168,7 @@ margin-left {
 }
 
 /*TABLE STYLE*/
-table thead {
+table thead, table th {
     background: #01024A;
     background: -moz-linear-gradient(top, #404177 0%, #1a1b5c 66%, #01024A 100%);
     background: -webkit-linear-gradient(top, #404177 0%, #1a1b5c 66%, #01024A 100%);
@@ -180,6 +180,9 @@ table td {
     text-align-all: center;
 }
 
+.justify {
+    text-align: justify;
+}
 
 .flex-container {
     display: flex;

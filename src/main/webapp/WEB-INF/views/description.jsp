@@ -53,14 +53,20 @@
                         <p class="text-center">EUROPA</p>
                         Jednoosobowa klasa łodzi żaglowej. W latach 1992-2004 klasa olimpijska dla kobiet.
                         Bardzo zaawansowana jeżeli chodzi o rozwiązania techniczne i regulacje. Wymaga zgłębienia wielu
-                        tajników trymowania i ustawienia łódki. Łódka bardzo
-                        szybka, zwrotna, dająca wielką radość podczas żeglowania już nawet przy średnich wiatrach. Po
+                        tajników trymowania i ustawienia łódki. Jest bardzo
+                        szybka, zwrotna i daje wielką radość podczas żeglowania już nawet przy średnich wiatrach. Po
                         opanowaniu wstępnych umiejętności żeglarskich na Optymiście,
                         Europa jest kolejnym krokiem rozwijania i doskonalenia żeglowania regatowego.
 
                         <div class="text-center margin-top"><a href="/" class="myButton">ZOBACZ TERMINY</a></div>
 
                     </div>
+                </div>
+            </div>
+            <div class="mx-auto">
+                <div class="bluebox2">
+                    Jeżeli nie wiesz jaki kurs wybrać, lub masz więcej pytań, zajrzyj do sekcji <a
+                        href="<c:url value = "/faq"/>">"Często zadawane pytania"</a>.
                 </div>
             </div>
         </div>

@@ -3,10 +3,10 @@
              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
              http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
              version="2.1">
-    <persistence-unit name="finalProjectPersistenceUnit">
+    <persistence-unit name="lgrPersistenceUnit">
         <properties>
             <property name="javax.persistence.jdbc.url"
-                      value="jdbc:mysql://localhost:3306/finalProject"/>
+                      value="jdbc:mysql://localhost:3306/lgr?useUnicode=true&amp;characterEncoding=utf-8"/>
             <property name="javax.persistence.jdbc.user" value="root"/>
             <property name="javax.persistence.jdbc.password" value="coderslab"/>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
@@ -17,6 +17,9 @@
             <property name="hibernate.connection.useUnicode" value="true"/>
             <property name="hibernate.connection.characterEncoding" value="utf8"/>
             <property name="hibernate.connection.CharSet" value="utf8"/>
+            <property name="javax.persistence.schema-generation.create-source" value="metadata"/>
+            <property name="javax.persistence.schema-generation.drop-source" value="metadata"/>
+            <!--<property name="javax.persistence.sql-load-script-source" value="SQL/initial.sql" />-->
 
         </properties>
     </persistence-unit>

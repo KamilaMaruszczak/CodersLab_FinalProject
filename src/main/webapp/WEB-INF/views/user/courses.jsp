@@ -105,6 +105,12 @@
                 </div>
             </div>
         </div>
+        <div class="mx-auto">
+            <div class="bluebox2">
+                Informacja o tym jak przygotować się do kursu znajduje się w sekcji <a href="<c:url value = "/faq"/>">"Często
+                zadawane pytania"</a>.
+            </div>
+        </div>
     </c:if>
 </div>
 
