@@ -9,6 +9,7 @@ import org.hibernate.validator.constraints.NotBlank;
 import pl.maruszczak.validator.UniqueEmail;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 import java.util.List;
 
 
@@ -35,7 +36,8 @@ public class User {
     @NotBlank
     private String password;
 
-    @NotBlank
+
+    @Size(min = 9, max = 13)
     private String phone;
 
     private boolean instructor;
