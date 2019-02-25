@@ -72,7 +72,7 @@
 
                     <h3 class=""><i class="fas fa-info-circle "></i> Ważne informacje:</h3>
                 </div>
-                <div class="text-justify bold">Po dokonaniu zapisu prosimy o wpłatę zaliczki w przeciągu <span
+                <div class="text-justify bold">Po dokonaniu zapisu prosimy o wpłatę zadatku w przeciągu <span
                         class="darkblue">7 dni</span> w celu potwierdzenia chęci udziału w kursie.
                     Dopiero po otrzymaniu wpłaty rezerwacja zostanie potwierdzona. W przeciwnym wypadku zarezerwowane
                     miejsce zostanie zwolnione i zniknie z karty "Moje zapisy".
@@ -81,7 +81,7 @@
                 <div class="text-justify bold">
                     <table class="bold white">
                         <tr>
-                            <td align="right">Kwota zaliczki:</td>
+                            <td align="right">Kwota zadatku:</td>
                             <td><span class="darkblue">&nbsp; 200zł x ilość zarezerwowanych miejsc</span></td>
                         </tr>
                         <tr>
@@ -99,8 +99,12 @@
                     </table>
                     <br>
                     <div class="text-justify bold">Pozostałą kwotę: 500zł x ilość zarezerwowanych miejsc, należy wpłacić
-                        na 7 dni przed datą rozpoczęcia
-                        kursu.
+                        minimum 7 dni przed datą rozpoczęcia kursu.
+                    </div>
+                    <br>
+                    <div class="text-justify bold">Jeżeli wiesz, że pomimo potwierdzonej rezerwacji miejsca żeglarz nie
+                        pojawi się na kursie, daj
+                        szansę innym, którzy czekają na to miejsce - skontaktuj się z nami lub usuń swój zapis.
                     </div>
                 </div>
             </div>

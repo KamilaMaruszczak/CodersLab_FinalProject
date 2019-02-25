@@ -62,7 +62,8 @@
                 <th class="align-middle">3. Kto może zapisać się na kurs?</th>
             </tr>
             <tr>
-                <td class="justify hide">Z założenia prowadzimy kursy dla młodzieży i dzieci od lat 7 na łódkach klasy
+                <td class="justify hide">Z założenia prowadzimy kursy dla młodzieży i dzieci od lat 7 (rocznikowo) na
+                    łódkach klasy
                     Optymist i Europa. Istnieje możliwość zapisu osób
                     dorosłych po uformowaniu się takiej grupy. Jeżeli interesuje Cię udział w kursie dla dorosłych lub
                     kurs indywidualny prosimy o
@@ -80,7 +81,7 @@
                     sportów wodnych i większość czasu spędza się w łódce na jeziorze. Dziecko uczestniczące w kursie
                     będzie wyposażone w kamizelkę asekuracyjną, ale nie może bać się wody.
                     Podczas kursu uczymy także wywrotek i stawiania łódki, dlatego umiejętność pływania lub utrzymywania
-                    się na wodzie jest mile widziana.
+                    się na wodzie jest niezbędna.
                 </td>
             </tr>
             <tr>
@@ -111,7 +112,17 @@
                 </td>
             </tr>
             <tr>
-                <th class="align-middle">7. Zapisałem się na kurs i opłaciłem miejsce, co dalej?</th>
+                <th class="align-middle">7. Jaki jest koszt kursu?</th>
+            </tr>
+            <tr>
+                <td class="justify hide">Całkowity koszt kursu to 700zł. Zadatek w wysokości 200zł płatny do 7 dni po
+                    zapisie oraz pozostała
+                    kwota minimum 7 dni przed ropoczęciem kursu. Oczywiście istnieje możliwość wpłaty całościowej kwoty
+                    jednorazowo.
+                </td>
+            </tr>
+            <tr>
+                <th class="align-middle">8. Zapisałem się na kurs i opłaciłem miejsce, co dalej?</th>
             </tr>
             <tr>
                 <td class="justify hide">Szkolenie zaczyna się w poniedziałek o godzinie 9.30 i kończy w sobotę regatami
@@ -123,7 +134,7 @@
                 </td>
             </tr>
             <tr>
-                <th class="align-middle">8. Co młody żeglarz powinien wziąć ze sobą na kurs?</th>
+                <th class="align-middle">9. Co młody żeglarz powinien wziąć ze sobą na kurs?</th>
             </tr>
             <tr>
                 <td class="justify hide">Żeglarz powinien mieć ubranie zapasowe do przebrania oraz ręcznik, w razie
@@ -134,7 +145,7 @@
                 </td>
             </tr>
             <tr>
-                <th class="align-middle">9. Co jeżeli nie ma wiatru lub jest bardzo zła pogoda?</th>
+                <th class="align-middle">10. Co jeżeli nie ma wiatru lub jest bardzo zła pogoda?</th>
             </tr>
             <tr>
                 <td class="justify hide"> Bezpieczeństwo jest dla nas najważniejsze. Instruktorzy dokładnie śledzą i
@@ -147,7 +158,7 @@
                 </td>
             </tr>
             <tr>
-                <th class="align-middle">10. Mam inne pytania i wątpliwości, co mam zrobić?</th>
+                <th class="align-middle">11. Mam inne pytania i wątpliwości, co mam zrobić?</th>
             </tr>
             <tr>
                 <td class="justify hide">W razie pytań lub wątpliwości na które nie ma odpowiedzi w tej sekcji, prosimy

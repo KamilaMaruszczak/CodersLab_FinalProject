@@ -85,10 +85,11 @@
                                                 <td class="align-middle">Kursant</td>
                                                 <td class="align-middle">Wiek</td>
                                                 <td class="align-middle">Zapis</td>
-                                                <td class="align-middle">Rodzic</td>
+                                                <td class="align-middle">Opiekun</td>
                                                 <td class="align-middle">Potwierdzony</td>
-                                                <td class="align-middle text-center">Wpłata</td>
+
                                                 <c:if test="${admin}">
+                                                    <td class="align-middle text-center">Wpłata</td>
                                                     <td class="align-middle">
                                                         <span class="d-none d-md-block">Zapisz&nbsp;wpł.</span>
                                                         <span class="d-md-none">Zapisz&nbsp;wpłatę</span>
@@ -126,11 +127,12 @@
 
                                                             </c:otherwise>
                                                         </c:choose></td>
-                                                    <td class="align-middle text-center">
-                                                        <span class="bold">${sailorCourse.paid}</span></td>
+
 
 
                                                     <c:if test="${admin}">
+                                                        <td class="align-middle text-center">
+                                                            <span class="bold">${sailorCourse.paid}</span></td>
                                                         <td class="align-middle text-center">
                                                             <form method="post"
                                                                   action="/sailor/payment/${sailorCourse.id}"
@@ -162,7 +164,7 @@
                                                 </tr>
                                                 <tr class="hide table-info" id="parent">
                                                     <td colspan="9" class="text-center">
-                                                        Rodzic: ${sailorCourse.sailor.user.name} &nbsp;
+                                                        Opiekun: ${sailorCourse.sailor.user.name} &nbsp;
                                                         tel: ${sailorCourse.sailor.user.phone} &nbsp;
                                                         email: ${sailorCourse.sailor.user.email}
                                                     </td>

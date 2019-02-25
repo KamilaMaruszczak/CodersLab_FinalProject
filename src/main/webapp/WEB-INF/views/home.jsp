@@ -32,10 +32,12 @@
             </div>
         </div>
         <div class="my-4">
-            <div class="table-responsive">
-                <table class="table table-striped text-center">
+
+            <div class="table-responsive ">
+                <table class="table table-striped text-center ">
                     <thead>
                     <tr>
+
                         <th scope="row" colspan="6"><h3>Lista kursów żeglarskich ${year}</h3></th>
                     </tr>
                     <tr>
@@ -54,7 +56,7 @@
                                                                      pattern='dd-MM-yyyy'/></td>
                             <td class="align-middle"><fmt:formatDate value='${item.endDate}' pattern='dd-MM-yyyy'/></td>
                             <td class="align-middle"> ${item.type}</td>
-                            <td class="align-middle"> ${item.instructor.name}</td>
+                            <td class="align-middle"> instruktor ${item.instructor.name.split(" ",0)[0].toString()}</td>
                             <td class="align-middle">
                                 <c:choose>
                                 <c:when test="${item.numberOfBoats-item.sailors.size()<0}">
@@ -80,6 +82,7 @@
                     </tbody>
                 </table>
             </div>
+
         </div>
 
 
