@@ -75,9 +75,8 @@
                 <th class="align-middle">4. Czy żeglarz musi umieć pływać?</th>
             </tr>
             <tr>
-                <td class="justify hide">Umiejętność pływania wpław nie jest niezbędna do uprawiania żeglarstwa.
-                    Natomiast
-                    trzeba pamiętać, że żeglarstwo jest zaliczane do
+                <td class="justify hide">
+                    Żeglarstwo jest zaliczane do
                     sportów wodnych i większość czasu spędza się w łódce na jeziorze. Dziecko uczestniczące w kursie
                     będzie wyposażone w kamizelkę asekuracyjną, ale nie może bać się wody.
                     Podczas kursu uczymy także wywrotek i stawiania łódki, dlatego umiejętność pływania lub utrzymywania
@@ -94,7 +93,7 @@
                     przekazać
                     wiedzę żeglarską niezbędną do samodzielnego żeglowania. Postęp podczas kursu i zdobyte umiejętności
                     są jednak zależne od indywidualnych
-                    predyspozycji żeglarskich.
+                    predyspozycji żeglarskich kursanta.
                 </td>
             </tr>
             <tr>
@@ -154,7 +153,7 @@
                     instruktor jest w stanie zholować łódki
                     do brzegu w ciągu kilku minut. Natomiast z drugiej strony, jeżeli pogoda jest zupełnie bezwietrzna,
                     kursanci mają zapewnione inne atrakcje
-                    typu kurs wiązania węzłów lub pokazy filmów żeglarskich.
+                    np. kurs wiązania węzłów lub pokazy filmów żeglarskich.
                 </td>
             </tr>
             <tr>
@@ -165,6 +164,15 @@
                     o
                     bezpośredni kontakt telefoniczny.
                     Dane kontaktowe znajdują się w zakładce <a href="/contact">"KONTAKT"</a>.
+                </td>
+            </tr>
+            <tr>
+                <th class="align-middle">12. Chcę edytować lub usunąć moje konto w serwisie, jak to zrobić?</th>
+            </tr>
+            <tr>
+                <td class="justify hide">W celu modyfikacji danych lub chęci usunięcia konta z serwisu prosimy o
+                    wiadomość
+                    wysłaną z maila na który zostało założone konto pod adres: <a href="">lubelskagruparegatowa@gmail.com</a>
                 </td>
             </tr>
 

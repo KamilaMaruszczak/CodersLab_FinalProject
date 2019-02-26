@@ -23,7 +23,7 @@
                     <div id="i"><i class="fas fa-info-circle "></i></div>
                     <span class="d-block text-justify" id="i_span"><small>Uprzejmie prosimy, aby <span class="darkblue">konto w serwisie było założone przez osobę pełnoletnią - rodzica lub opiekuna</span> młodego żeglarza.
                     Dane kontaktowe są nam niezbędne ze względów regulaminowych oraz bezpieczeństwa dzieci na kursie i będą wykorzystywanie wyłącznie w tym celu zgodnie
-                    z (art. 6 ust. 1) Rozporządzenia RODO</small></span>
+                    z (art. 6 ust. 1) Rozporządzenia RODO.</small></span>
                 </div>
             </div>
         </div>
