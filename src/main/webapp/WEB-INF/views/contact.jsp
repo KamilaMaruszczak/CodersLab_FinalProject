@@ -62,7 +62,10 @@
                                                                                  rel="noopener noreferrer"
                                                                                  target="_blank"> 51°23'16.8"N
             23°02'14.6"E</a> <br><br>
-
+            <br>
+            <br>
+            <span class="font20"><i class="fas fa-tools"></i></span>
+            <small>Pomoc techniczna serwisu: 695-987-321</small>
         </div>
 
     </div>
