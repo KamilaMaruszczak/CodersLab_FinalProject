@@ -14,5 +14,6 @@ public class SailorConverter implements Converter<String, Sailor> {
     public Sailor convert(String s) {
 
         return sailorRepository.findOne(Long.parseLong(s));
+
     }
 }

@@ -129,11 +129,14 @@ public class UserController {
 
     @RequestMapping(value = "/course-confirm/existing/{courseId}", method = RequestMethod.POST)
     public String courseUpdate(Sailor sailor, @PathVariable Long courseId, Model model, @SessionAttribute String email) {
+        Long sailorId = sailor.getId();
+        if (sailorId != 0) {
+            sailor = sailorRepository.findOne(sailorId);
+            return addSailor(email, sailor, courseId, model);
 
-        sailor = sailorRepository.findOne(sailor.getId());
-
-        return addSailor(email, sailor, courseId, model);
-
+        } else {
+            return "redirect:/user/course-confirm/" + courseId;
+        }
     }
 
     @RequestMapping(value = "/course-confirm/new/{courseId}", method = RequestMethod.POST)

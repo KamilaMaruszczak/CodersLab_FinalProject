@@ -43,7 +43,7 @@
                 <td class="align-middle"><fmt:formatDate value='${course.startDate}' pattern='dd-MM-yyyy'/></td>
                 <td class="align-middle"><fmt:formatDate value='${course.endDate}' pattern='dd-MM-yyyy'/></td>
                 <td class="align-middle"> ${course.type}</td>
-                <td class="align-middle"> ${course.instructor.name}</td>
+                <td class="align-middle"> instruktor ${course.instructor.name.split(" ",0)[0].toString()}</td>
             </tr>
 
 
@@ -57,26 +57,29 @@
                        action="/user/course-confirm/existing/${course.id}">
 
                 <div>
-                    <label>Żeglarz:</label>
+                    <label><span class="bold">Jeżeli już kiedyś zapisywałeś na kurs, to wybierz żeglarza z listy:</span></label>
                     <div>
                         <form:select path="id">
+                            <form:option value="0" label="Lista moich żeglarzy"/>
                             <form:options items="${userSailors}" itemValue="id" itemLabel="name"/>
                         </form:select>
+                        <input type="submit" class="myButton" value="ZAPISZ Z LISTY"/>
                     </div>
                 </div>
 
                 <div class="form-group row">
                     <div class="mx-auto">
-                        <input type="submit" class="myButton" value="ZAPISZ"/>
+
                     </div>
                 </div>
             </form:form>
-
+            <br>
+            <span class="bold">Lub dodaj nowego:</span>
 
             <form:form modelAttribute="sailor" method="post" class="mx-auto"
                        action="/user/course-confirm/new/${course.id}">
                 <div class="form-group row">
-                    <label class="control-label col-sm-10">Imię i nazwisko żeglarza:</label>
+                    <label class="control-label col-sm-10">Imię i nazwisko:</label>
                     <div class="col-sm-10">
                         <form:input path="name" class="form-control" placeholder=""/>
                         <form:errors path="name" cssClass="error"/>
@@ -92,18 +95,12 @@
 
                 <div class="form-group row">
                     <div class="mx-auto">
-                        <input type="submit" class="myButton" value="ZAPISZ"/>
+                        <input type="submit" class="myButton" value="ZAPISZ NOWEGO ŻEGLARZA"/>
 
                     </div>
                 </div>
             </form:form>
-            <div class="row">
-                <div class="mx-auto">
-                    <a href="/" class="center">
-                        <button class="myButton">ZREZYGNUJ</button>
-                    </a>
-                </div>
-            </div>
+
         </div>
     </div>
 </div>
