@@ -47,6 +47,8 @@ public class CourseController {
         List<String> type = new ArrayList<String>();
         type.add("OPTYMIST");
         type.add("EUROPA");
+        type.add("KORSARZ sternik");
+        type.add("KORSARZ załoga");
         type.add("OMEGA");
         return type;
     }

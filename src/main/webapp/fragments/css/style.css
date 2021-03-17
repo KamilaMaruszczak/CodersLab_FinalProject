@@ -412,6 +412,15 @@ a.article:hover {
     color: #fff !important;
 }
 
+#calendar {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+#subscribe-id {
+    display: none;
+}
+
 /* ---------------------------------------------------
     CONTENT STYLE
 ----------------------------------------------------- */
@@ -505,8 +514,6 @@ a.article:hover {
     font-weight: 500;
 }
 
-
-
 .width10 {
     width: 10px;
 }
@@ -528,8 +535,16 @@ a.article:hover {
     width: 300px;
 }
 
+.width350 {
+    width: 350px;
+}
+
 .width400 {
     width: 400px;
+}
+
+.width420 {
+    width: 420px;
 }
 
 .mapouter {

@@ -32,6 +32,26 @@
         <table class="table table-striped" id="sailors">
 
             <tr>
+                <th class="align-middle">0. Jakie są obostrzenia związane z Covid-19?</th>
+            </tr>
+            <tr>
+                <td class="justify hide">
+                    Obostrzenia sanitarne związane z Covid-19:
+                    <ul>
+                        <li>Konieczność zakrywania ust i nosa określona przez aktualnie obowiązujące przepisy
+                            epidemiologiczne.
+                        </li>
+                        <li>Dezynfekcja dłoni przy wejściu na teren Bazy Lubelskiej Grupy Regatowej.</li>
+                        <li>Przebywanie na terenie Bazy jednej grupy ćwiczebnej w danej jednostce czasu z wyjątkiem dnia
+                            rozgrywania regat.
+                        </li>
+                        <li>Zakaz przebywania na terenie Bazy osób innych niż aktualnie biorące udział w szkoleniu, z
+                            wyjątkiem osób poproszonych o wejście na teren przez instruktora lub obsługę kursów.
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
                 <th class="align-middle">1. Jak zapisać się na kurs?</th>
             </tr>
             <tr>

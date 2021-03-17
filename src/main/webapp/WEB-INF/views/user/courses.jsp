@@ -115,6 +115,23 @@
                 zadawane pytania"</a>.
             </div>
         </div>
+        <div class="mx-auto">
+            <div class="bluebox2">
+                <span class="darkblue">Obostrzenia sanitarne związane z Covid-19:</span>
+                <ul>
+                    <li>Konieczność zakrywania ust i nosa określona przez aktualnie obowiązujące przepisy
+                        epidemiologiczne.
+                    </li>
+                    <li>Dezynfekcja dłoni przy wejściu na teren Bazy Lubelskiej Grupy Regatowej.</li>
+                    <li>Przebywanie na terenie Bazy jednej grupy ćwiczebnej w danej jednostce czasu z wyjątkiem dnia
+                        rozgrywania regat.
+                    </li>
+                    <li>Zakaz przebywania na terenie Bazy osób innych niż aktualnie biorące udział w szkoleniu, z
+                        wyjątkiem osób poproszonych o wejście na teren przez instruktora lub obsługę kursów.
+                    </li>
+                </ul>
+            </div>
+        </div>
     </c:if>
 </div>
 

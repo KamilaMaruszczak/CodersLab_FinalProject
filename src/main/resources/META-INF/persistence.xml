@@ -13,13 +13,13 @@
             <property name="javax.persistence.schema-generation.database.action"
                       value="update"/>
             <property name="hibernate.dialect"
-                      value="org.hibernate.dialect.MySQL57Dialect"/>
+                      value="org.hibernate.dialect.MySQLDialect"/>
             <property name="hibernate.connection.useUnicode" value="true"/>
             <property name="hibernate.connection.characterEncoding" value="utf8"/>
             <property name="hibernate.connection.CharSet" value="utf8"/>
             <property name="javax.persistence.schema-generation.create-source" value="metadata"/>
             <property name="javax.persistence.schema-generation.drop-source" value="metadata"/>
-            <!--<property name="javax.persistence.sql-load-script-source" value="SQL/initial.sql" />-->
+            <property name="javax.persistence.sql-load-script-source" value="SQL/initial.sql"/>
 
         </properties>
     </persistence-unit>

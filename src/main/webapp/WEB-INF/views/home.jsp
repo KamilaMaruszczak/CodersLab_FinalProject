@@ -28,7 +28,13 @@
     <div class="border box">
         <div class="row">
             <div class="mx-auto my-4">
-                <img class="img-fluid" alt="Responsive image" src="/fragments/images/kalendar.png">
+
+                <iframe src="https://calendar.google.com/calendar/embed?showNav=0&amp;showPrint=0&amp;showTabs=0&amp;showTitle=0&amp;showTz=0&amp;height=400&amp;wkst=2&amp;bgcolor=%23ffffff&amp;ctz=Europe%2FWarsaw&amp;src=bHViZWxza2FncnVwYXJlZ2F0b3dhQGdtYWlsLmNvbQ&amp;src=bGhyY2E1cnJtOTN0NmRyaGc1ZTk1aDZzZzRAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;src=c3U3b3Vsc21hZzZjcXRwcWR1dnExNDhmajBAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;src=cGV1Ym9uZ2c0MjlyczJwcmh1bnNrbm9oYzhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%23D50000&amp;color=%233F51B5&amp;color=%23F6BF26&amp;color=%237CB342&amp;dates=${year}0701%2F${year}0731"
+                        style="border-width:0" width="340" height="400" frameborder="0" scrolling="no"></iframe>
+
+                <iframe src="https://calendar.google.com/calendar/embed?showNav=0&amp;showPrint=0&amp;showTabs=0&amp;showTitle=0&amp;showTz=0&amp;height=400&amp;wkst=2&amp;bgcolor=%23ffffff&amp;ctz=Europe%2FWarsaw&amp;src=bHViZWxza2FncnVwYXJlZ2F0b3dhQGdtYWlsLmNvbQ&amp;src=bGhyY2E1cnJtOTN0NmRyaGc1ZTk1aDZzZzRAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;src=c3U3b3Vsc21hZzZjcXRwcWR1dnExNDhmajBAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;src=cGV1Ym9uZ2c0MjlyczJwcmh1bnNrbm9oYzhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%23D50000&amp;color=%233F51B5&amp;color=%23F6BF26&amp;color=%237CB342&amp;dates=${year}0801%2F${year}0830"
+                        style="border-width:0" width="340" height="400" frameborder="0" scrolling="no"></iframe>
+
             </div>
         </div>
         <div class="my-4">

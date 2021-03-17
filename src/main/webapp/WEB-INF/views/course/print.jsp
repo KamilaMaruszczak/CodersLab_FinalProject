@@ -62,7 +62,7 @@
                                             class="align-middle">${2019-sailorCourse.sailor.yearOfBirth} lat
                                         </td>
                                         <td style="width:28%" class="align-middle">
-                                            Rodzic: ${sailorCourse.sailor.user.phone} </td>
+                                            Opiekun: ${sailorCourse.sailor.user.phone} </td>
 
                                         <td style="width:20%" class="align-middle">
                                             <c:choose>
@@ -70,9 +70,6 @@
                                                     <span class="bold">POTWIERDZONY </span>
                                                 </c:when>
                                             </c:choose></td>
-                                        <td style="width:10%" class="align-middle text-center">
-                                            <span class="bold">${sailorCourse.paid}</span></td>
-
 
                                     </tr>
 
