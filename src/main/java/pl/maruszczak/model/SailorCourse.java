@@ -34,12 +34,16 @@ public class SailorCourse {
 
     private String paid;
 
+    @Column(name = "bench_warmer")
+    private Boolean isBenchWarmer;
+
     public SailorCourse() {
     }
 
-    public SailorCourse(Sailor sailor, Course course, Date entryDate) {
+    public SailorCourse(Sailor sailor, Course course, Date entryDate, Boolean isBenchWarmer) {
         this.sailor = sailor;
         this.course = course;
         this.entryDate = entryDate;
+        this.isBenchWarmer = isBenchWarmer;
     }
 }

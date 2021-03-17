@@ -94,7 +94,6 @@
                                                 <td class="align-middle">Wiek</td>
                                                 <td class="align-middle">Zapis</td>
                                                 <td class="align-middle">Opiekun</td>
-                                                <td class="align-middle">Potwierdzony</td>
 
                                                 <c:if test="${admin}">
                                                     <td class="align-middle text-center">Wpłata</td>
@@ -104,8 +103,8 @@
                                                     </td>
                                                     <td class="align-middle">Usuń</td>
                                                 </c:if>
-
-
+                                                <td class="align-middle">Potwierdzony</td>
+                                                <td class="align-middle">ListaRezerwowa</td>
                                             </tr>
 
                                             <tbody>
@@ -122,21 +121,6 @@
                                                     <td class="align-middle text-center"><i
                                                             class="far fa-address-card blue ismall"></i>
                                                     </td>
-                                                    <td class="align-middle">
-                                                        <c:choose>
-                                                            <c:when test="${sailorCourse.confirmed}">
-                                                                <span class="bold">POTWIERDZONY </span>
-                                                            </c:when>
-                                                            <c:otherwise>
-
-                                                                <c:if test="${admin}">
-                                                                    <a href="<c:url value = "/sailor/confirm/${sailorCourse.id}"/>">POTWIERDŹ</a>
-                                                                </c:if>
-
-                                                            </c:otherwise>
-                                                        </c:choose></td>
-
-
 
                                                     <c:if test="${admin}">
                                                         <td class="align-middle text-center">
@@ -167,6 +151,31 @@
 
                                                         </td>
                                                     </c:if>
+                                                    <td class="align-middle">
+                                                        <c:choose>
+                                                            <c:when test="${sailorCourse.confirmed}">
+                                                                <span class="bold">POTWIERDZONY </span>
+                                                            </c:when>
+                                                            <c:otherwise>
+
+                                                                <c:if test="${admin && !sailorCourse.isBenchWarmer}">
+                                                                    <a href="<c:url value = "/sailor/confirm/${sailorCourse.id}"/>">POTWIERDŹ</a>
+                                                                </c:if>
+
+                                                            </c:otherwise>
+                                                        </c:choose>
+                                                    </td>
+                                                    <td class="align-middle width10"><c:choose>
+                                                        <c:when test="${sailorCourse.isBenchWarmer}">
+                                                            <span class="bold">REZERWA
+                                                            <c:if test="${admin}">
+                                                                <a href="<c:url value = "/sailor/removeBenchWarmer/${sailorCourse.id}"/>">
+                                                                    <i class="fas fa-backspace blue ismall inline"></i>
+                                                                </a>
+                                                            </c:if>
+                                                            </span>
+                                                        </c:when>
+                                                    </c:choose></td>
 
 
                                                 </tr>

@@ -159,7 +159,11 @@ public class UserController {
         Course course = courseRepository.findOne(courseId);
         int numberOfSailorsOnCourse = sailorCourseRepository.findAllByCourse(course).size();
         if (numberOfSailorsOnCourse < course.getNumberOfBoats()) {
-            SailorCourse sailorCourse = new SailorCourse(sailor, course, Calendar.getInstance().getTime());
+            SailorCourse sailorCourse = new SailorCourse(sailor, course, Calendar.getInstance().getTime(), false);
+            sailorCourseRepository.save(sailorCourse);
+            model.addAttribute("course", course);
+        } else {
+            SailorCourse sailorCourse = new SailorCourse(sailor, course, Calendar.getInstance().getTime(), true);
             sailorCourseRepository.save(sailorCourse);
             model.addAttribute("course", course);
         }

@@ -46,4 +46,12 @@ public class SailorController {
         sailorCourseRepository.save(sc);
         return "redirect:/course/all";
     }
+
+    @RequestMapping(value = "/removeBenchWarmer/{sailorCourseId}", produces = "text/html; charset=utf-8")
+    public String removeBenchWarmerStatus(@PathVariable Long sailorCourseId) {
+        SailorCourse sc = sailorCourseRepository.findOne(sailorCourseId);
+        sc.setIsBenchWarmer(false);
+        sailorCourseRepository.save(sc);
+        return "redirect:/course/all";
+    }
 }

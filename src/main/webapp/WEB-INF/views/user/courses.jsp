@@ -34,11 +34,12 @@
             <tr></tr>
             <tr>
                 <th class="align-middle">Żeglarz</th>
-                <th class="align-middle">Data rozpoczęcia</th>
-                <th class="align-middle">Data zakończenia</th>
+                <th class="align-middle">Data kursu</th>
                 <th class="align-middle">Klasa</th>
                 <th class="align-middle">Instruktor</th>
                 <th class="align-middle">Data Zapisu</th>
+                <th class="align-middle">Miejsce Potwierdzone</th>
+                <th class="align-middle">Lista</th>
                 <th class="align-middle">Usuń Zapis</th>
             </tr>
             </thead>
@@ -46,14 +47,31 @@
             <c:forEach items="${sailorCourseList}" var="sailorCourse">
                 <tr>
                     <td class="align-middle">${sailorCourse.sailor.name}</td>
-                    <td class="align-middle"><fmt:formatDate value='${sailorCourse.course.startDate}'
-                                                             pattern='dd-MM-yyyy'/></td>
-                    <td class="align-middle"><fmt:formatDate value='${sailorCourse.course.endDate}'
-                                                             pattern='dd-MM-yyyy'/></td>
+                    <td class="align-middle">
+                        <fmt:formatDate value='${sailorCourse.course.startDate}'
+                                        pattern='dd-MM-yyyy'/>
+                        <fmt:formatDate value='${sailorCourse.course.endDate}'
+                                        pattern='dd-MM-yyyy'/>
+                    </td>
                     <td class="align-middle">${sailorCourse.course.type}</td>
                     <td class="align-middle">${sailorCourse.course.instructor.name}</td>
                     <td class="align-middle"><fmt:formatDate value='${sailorCourse.entryDate}'
                                                              pattern='dd-MM-yyyy'/></td>
+                    <td class="align-middle center">
+                        <c:if test="${sailorCourse.confirmed}">
+                            TAK
+                        </c:if>
+                    </td>
+                    <td class="align-middle">
+                        <c:choose>
+                            <c:when test="${sailorCourse.isBenchWarmer}">
+                                <span class="bold">LISTA REZERWOWA</span>
+                            </c:when>
+                            <c:otherwise>
+                                <span>LISTA GŁÓWNA</span>
+                            </c:otherwise>
+                        </c:choose>
+                    </td>
                     <td class="align-middle">
                         <a class="trigger" href="">USUŃ</a>
                         <span class="hide tooltiptext">Tej operacji nie można cofnąć.<br><span
